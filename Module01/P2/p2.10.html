@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <form action="feedback" method="post">
+                <section>
+                    <h2>Chi tiết Hóa đơn Mua hàng</h2>
+                    <table>
+                        <caption>
+                            Hóa đơn điện tử #HD-20262310
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Tên sản phẩm</th>
+                                <th scope="col">Chi tiết</th>
+                                <th scope="col">Đơn giá</th>
+                                <th scope="col">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Áo thun Lập trình viên</td>
+                                <td>
+                                    <ul>
+                                        <li>Màu sắc: Đen</li>
+                                        <li>Kích cỡ: XL</li>
+                                        <li>Chất liệu: Cotton 100%</li>
+                                    </ul>
+                                </td>
+                                <td>250.000đ</td>
+                                <td>250.000đ</td>
+                            </tr>
+                            <tr>
+                                <td>Bàn phím cơ bản</td>
+                                <td>
+                                    <ul>
+                                        <li>Switch: Red</li>
+                                        <li>Layout: TKL</li>
+                                    </ul>
+                                </td>
+                                <td>800.000đ</td>
+                                <td>800.000đ</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <th colspan="4" style="text-align: end">Tổng tiền thanh toán: 1.050.000đ</th>
+                        </tfoot>
+                    </table>
+                    <hr />
+                </section>
+
+                <section>
+                    <h2>Đánh giá trải nghiệm mua hàng</h2>
+                    <fieldset>
+                        <legend>Phản hồi của bạn</legend>
+                        <div>
+                            <label for="feedback">Mức độ hài lòng: </label>
+                            <select>
+                                <option>-- Vui lòng chọn số sao --</option>
+                                <option>1 sao</option>
+                                <option>2 sao</option>
+                                <option>3 sao</option>
+                                <option>4 sao</option>
+                                <option>5 sao</option>
+                            </select>
+                        </div>
+                        <br />
+                        <div>
+                            <label for="comment">Lời nhận xét chi tiết:</label><br />
+                            <textarea placeholder="Hãy chia sẻ trải nghiệm của bạn về sản phẩm và dịch vụ..."></textarea>
+                        </div>
+                    </fieldset>
+                </section>
+                <br />
+                <button type="submit">Gửi phản hồi</button>
+            </form>
+        </main>
+        <footer></footer>
+    </body>
+</html>
