@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.booking-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.clinic-info {
+    flex: 1;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 50px 40px;
+}
+
+.info-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.info-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.info-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-features li {
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.booking-form {
+    flex: 1;
+    padding: 50px 40px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.booking-form label {
+    font-size: 0.9rem;
+    color: #555555;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #333333;
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #007bff;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+@media screen and (max-width: 768px) {
+    .booking-section {
+        flex-direction: column-reverse;
+    }
+
+    .clinic-info {
+        padding: 40px 25px;
+    }
+
+    .booking-form {
+        padding: 40px 25px;
+    }
+}

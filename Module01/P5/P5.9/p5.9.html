@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="p5.9.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <section class="booking-section">
+                <article class="clinic-info">
+                    <h2 class="info-title">Nha Khoa Smile Care</h2>
+                    <p class="info-desc">
+                        Nụ cười tự tin là chìa khóa mở ra những cơ hội mới. Chúng tôi cam kết mang lại trải nghiệm chăm sóc răng miệng không đau với
+                        công nghệ tiên tiến nhất đến từ Châu Âu.
+                    </p>
+                    <ul class="info-features">
+                        <li>Đội ngũ bác sĩ chuyên khoa hơn 10 năm kinh nghiệm</li>
+                        <li>Trang thiết bị X-Quang 3D hiện đại nhất</li>
+                        <li>Vô trùng tuyệt đối theo tiêu chuẩn quốc tế</li>
+                        <li>Bảo hành trọn đời dịch vụ Răng sứ</li>
+                    </ul>
+                </article>
+
+                <form class="booking-form">
+                    <h3 class="form-title">Đặt Lịch Khám Ngay</h3>
+                    <label for="fullname">Họ và tên</label>
+                    <input type="text" id="fullname" placeholder="Nhập tên của bạn" required />
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" placeholder="Nhập số điện thoại cần liên hệ" required />
+                    <label for="service">Dịch vụ cần tư vấn</label>
+                    <select id="service" required>
+                        <option value="kham-tong-quat">Khám tổng quát & Lấy cao răng</option>
+                        <option value="nho-rang">Nhổ răng khôn</option>
+                        <option value="rang-su">Làm răng sứ thẩm mỹ</option>
+                    </select>
+                    <button type="submit" class="submit-btn">Xác Nhận Đặt Lịch</button>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
