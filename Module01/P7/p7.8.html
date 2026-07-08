@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+            };
+
+            function toggleTheme() {
+                document.documentElement.classList.toggle("dark");
+            }
+        </script>
+
+        <title>Tour Pricing</title>
+    </head>
+    <body class="bg-gray-100 dark:bg-gray-900 transition duration-300">
+        <div class="min-h-screen flex items-center justify-center relative">
+            <div class="w-full max-w-md bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 transition duration-300">
+                <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white">Tour Đà Lạt</h2>
+
+                <p class="text-center text-gray-500 dark:text-gray-400 mt-2">3 Ngày 2 Đêm</p>
+
+                <div class="text-center my-8">
+                    <span class="text-5xl font-bold text-blue-600"> 2.500.000đ </span>
+                    <span class="text-gray-500 dark:text-gray-300"> /khách </span>
+                </div>
+
+                <div class="space-y-4 pl-10 text-gray-700 dark:text-gray-300 mb-8">
+                    <p>Khách sạn 4 sao trung tâm</p>
+                    <p>Xe Limousine đưa đón tận nơi</p>
+                    <p>Vé tham quan tất cả các điểm</p>
+                </div>
+
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition duration-300">
+                    ĐẶT TOUR NGAY
+                </button>
+            </div>
+
+            <button
+                onclick="toggleTheme()"
+                class="fixed bottom-6 right-6 bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-white px-5 py-2 rounded-full shadow-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition duration-300"
+            >
+                Đổi Giao Diện
+            </button>
+        </div>
+    </body>
+</html>
