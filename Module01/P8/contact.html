@@ -1,450 +1,691 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="vi">
-
-<head>
+<!doctype html>
+<html class="dark scroll-smooth" lang="vi">
+  <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Liên Hệ Với Chúng Tôi - FitLife Premium</title>
+    <title>FitLife Premium | Liên Hệ</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed": "#ffe088",
-                        "on-secondary-container": "#572000",
-                        "on-background": "#eae1d4",
-                        "surface-container-low": "#1f1b13",
-                        "on-primary": "#3c2f00",
-                        "secondary-fixed": "#ffdbcc",
-                        "surface-container-high": "#2d2a21",
-                        "surface-dim": "#16130b",
-                        "on-primary-fixed": "#241a00",
-                        "surface-container": "#231f17",
-                        "on-secondary-fixed-variant": "#7a3000",
-                        "on-tertiary-fixed": "#00174b",
-                        "error-container": "#93000a",
-                        "on-primary-container": "#554300",
-                        "secondary-container": "#fe6b00",
-                        "on-error": "#690005",
-                        "primary-fixed-dim": "#e9c349",
-                        "surface-container-highest": "#38342b",
-                        "on-tertiary": "#082b72",
-                        "surface-tint": "#e9c349",
-                        "secondary-fixed-dim": "#ffb693",
-                        "outline": "#99907c",
-                        "primary-container": "#d4af37",
-                        "outline-variant": "#4d4635",
-                        "surface-container-lowest": "#110e07",
-                        "on-tertiary-fixed-variant": "#27438a",
-                        "surface-bright": "#3d392f",
-                        "on-surface": "#eae1d4",
-                        "surface": "#16130b",
-                        "secondary": "#ffb693",
-                        "tertiary-fixed": "#dbe1ff",
-                        "tertiary-fixed-dim": "#b4c5ff",
-                        "on-primary-fixed-variant": "#574500",
-                        "tertiary": "#bfcdff",
-                        "tertiary-container": "#97b0ff",
-                        "on-secondary-fixed": "#351000",
-                        "inverse-primary": "#735c00",
-                        "primary": "#f2ca50",
-                        "on-surface-variant": "#d0c5af",
-                        "error": "#ffb4ab",
-                        "inverse-on-surface": "#343027",
-                        "inverse-surface": "#eae1d4",
-                        "on-error-container": "#ffdad6",
-                        "surface-variant": "#38342b",
-                        "on-tertiary-container": "#254188",
-                        "background": "#16130b",
-                        "on-secondary": "#561f00"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "lg": "48px",
-                        "xs": "4px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "md": "24px",
-                        "xl": "80px",
-                        "container-max": "1280px",
-                        "sm": "12px"
-                    },
-                    "fontFamily": {
-                        "label-sm": ["Inter"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "display-lg": ["Montserrat"],
-                        "display-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
-                    }
-                }
-            }
-        }
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              bgMain: "#0A0A0A",
+              bgSub: "#141414",
+              premiumGold: "#D4AF37",
+              accentOrange: "#FF6B00",
+              textWhite: "#FFFFFF",
+              textGray: "#B5B5B5",
+              borderGray: "#333333",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .slide-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease-out;
+      }
+      .slide-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .material-symbols-outlined.fill-icon {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+      .premium-text-gradient {
+        background: linear-gradient(to right, #d4af37, #ff6b00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Form input focus styles */
+      .premium-input:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 0 1px #d4af37;
+      }
+
+      .map-container {
+        filter: invert(90%) hue-rotate(180deg) grayscale(30%);
+      }
     </style>
-</head>
+  </head>
+  <body
+    class="bg-bgMain text-textGray font-inter antialiased overflow-x-hidden selection:bg-premiumGold selection:text-bgMain"
+  >
+    <!-- Header -->
+    <nav
+      id="header"
+      class="fixed top-0 w-full z-50 bg-bgMain/80 backdrop-blur-md border-b border-borderGray transition-all duration-300"
+    >
+      <div class="w-full px-6 h-20 flex justify-between items-center">
+        <a
+          href="index.html"
+          class="font-poppins text-3xl text-textWhite tracking-tighter"
+          >FIT<span class="text-premiumGold">LIFE</span></a
+        >
 
-<body
-    class="bg-background text-on-background antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation (Desktop) -->
-    <nav class="hidden md:block fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-surface/90 shadow-sm border-b border-outline-variant/30 transition-all duration-300">
-        <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-            <a class="font-display-lg text-primary dark:text-primary-fixed italic tracking-tighter text-3xl" href="index.html">
-                FitLife Premium
-            </a>
-            <section class="flex gap-8 items-center">
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="index.html">Trang Chủ</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="classes.html">Lớp Học</a>
-                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="contact.html">Liên Hệ</a>
-                <a href="contact.html"
-                    class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded font-label-bold text-label-bold uppercase tracking-wider hover:opacity-90 transition-opacity inline-block">
-                    Tham Gia Ngay
-                </a>
-            </section>
+        <div class="hidden md:flex gap-8 items-center">
+          <a
+            href="index.html"
+            class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+            >Trang Chủ</a
+          >
+          <a
+            href="classes.html"
+            class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+            >Lớp Học</a
+          >
+          <a
+            href="contact.html"
+            class="text-premiumGold font-semibold border-b-2 border-premiumGold pb-1 uppercase tracking-widest text-sm hover:text-premiumGold transition-colors"
+            >Liên Hệ</a
+          >
+          <a
+            href="contact.html"
+            class="bg-premiumGold text-bgMain px-6 py-2 rounded font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors"
+            >Đăng Ký Ngay</a
+          >
         </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-textWhite">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
     </nav>
-    <!-- SideNavBar (Mobile) -->
-    <nav class="md:hidden fixed inset-y-0 left-0 w-64 z-[60] bg-surface-container-highest shadow-xl flex flex-col h-full py-8 transform -translate-x-full transition-transform duration-300"
-        id="mobileNav">
-        <header class="px-md mb-xl">
-            <h2 class="text-primary font-display-lg-mobile text-display-lg-mobile italic tracking-tighter">FitLife</h2>
-            <p class="font-label-sm text-label-sm text-on-surface-variant mt-xs uppercase tracking-widest">Hiệu Suất Tối
-                Ưu</p>
-        </header>
-        <ul class="flex-1 flex flex-col gap-sm">
-            <li>
-                <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200 rounded-lg"
-                    href="index.html">
-                    <span class="material-symbols-outlined">home</span>
-                    <span class="font-headline-md-mobile text-headline-md-mobile">Trang Chủ</span>
-                </a>
-            </li>
-            <li>
-                <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200 rounded-lg"
-                    href="classes.html">
-                    <span class="material-symbols-outlined">fitness_center</span>
-                    <span class="font-headline-md-mobile text-headline-md-mobile">Lớp Học</span>
-                </a>
-            </li>
-            <li>
-                <a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 p-4 flex items-center gap-4 transition-all duration-200"
-                    href="contact.html">
-                    <span class="material-symbols-outlined fill-icon">mail</span>
-                    <span class="font-headline-md-mobile text-headline-md-mobile">Liên Hệ</span>
-                </a>
-            </li>
-        </ul>
-        <footer class="px-md mt-auto">
-            <a href="contact.html"
-                class="w-full bg-secondary-container text-on-secondary-container font-headline-md-mobile text-headline-md-mobile py-4 rounded-lg flex items-center justify-center gap-sm">
-                <span class="material-symbols-outlined">star</span>
-                Tham Gia Ngay
-            </a>
-        </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <nav
+      id="mobile-menu"
+      class="fixed inset-0 bg-bgMain z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 md:hidden"
+    >
+      <a
+        href="index.html"
+        class="text-textWhite text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4"
+        >Trang Chủ</a
+      >
+      <a
+        href="classes.html"
+        class="text-textWhite text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4"
+        >Lớp Học</a
+      >
+      <a
+        href="contact.html"
+        class="text-premiumGold text-2xl font-poppins uppercase mb-8 border-b border-borderGray pb-4"
+        >Liên Hệ</a
+      >
+      <a
+        href="contact.html"
+        class="bg-premiumGold text-bgMain text-center py-4 rounded font-bold uppercase tracking-widest"
+        >Đăng Ký Tập Thử</a
+      >
     </nav>
-    <!-- Mobile Nav Toggle -->
-    <button
-        class="md:hidden fixed top-4 right-4 z-50 p-2 bg-surface-container rounded-lg shadow-md border border-outline-variant/30 text-primary"
-        id="mobileNavToggle">
-        <span class="material-symbols-outlined">menu</span>
-    </button>
-    <main class="pt-xl md:pt-32 pb-xl px-gutter max-w-container-max mx-auto min-h-screen">
-        <!-- Hero Section -->
-        <header class="mb-xl text-center md:text-left relative">
-            <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl -z-10"></div>
-            <h1
-                class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-inverse-surface mb-sm tracking-tighter">
-                Liên Hệ Với Chúng Tôi</h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Kết nối với đội ngũ của chúng tôi và
-                bắt đầu hành trình thay đổi ngay hôm nay. Sự xuất sắc chỉ cách bạn một tin nhắn.</p>
-        </header>
-        <!-- Main Content Split -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
-            <!-- Left Info Panel -->
-            <div class="lg:col-span-5 flex flex-col gap-md">
-                <article
-                    class="bg-surface-container border-t-2 border-primary-container p-gutter rounded-lg relative overflow-hidden group hover:border-secondary-container transition-colors duration-300">
-                    <div
-                        class="absolute -right-12 -top-12 w-32 h-32 bg-surface-container-high rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 ease-out">
-                    </div>
-                    <h3
-                        class="font-headline-md text-headline-md text-inverse-surface mb-md relative z-10 flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary-container fill-icon">location_on</span> Địa
-                        Chỉ
-                    </h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant relative z-10">123 Fitness
-                        Avenue,<br />District 1, Ho Chi Minh City</p>
-                </article>
-                <article
-                    class="bg-surface-container border border-outline-variant/30 p-gutter rounded-lg relative overflow-hidden group hover:border-primary-container/50 transition-colors duration-300">
-                    <h3
-                        class="font-headline-md text-headline-md text-inverse-surface mb-md relative z-10 flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary-container fill-icon">call</span> Đường Dây
-                        Nóng
-                    </h3>
-                    <p
-                        class="font-body-md text-body-md text-on-surface-variant relative z-10 font-label-bold text-lg tracking-wider">
-                        1900 888 999</p>
-                </article>
-                <article
-                    class="bg-surface-container border border-outline-variant/30 p-gutter rounded-lg relative overflow-hidden group hover:border-primary-container/50 transition-colors duration-300">
-                    <h3
-                        class="font-headline-md text-headline-md text-inverse-surface mb-md relative z-10 flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary-container fill-icon">mail</span> Hòm Thư
-                        Điện Tử
-                    </h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant relative z-10">support@fitlifeclub.com
-                    </p>
-                </article>
-                <article
-                    class="bg-surface-container border border-outline-variant/30 p-gutter rounded-lg relative overflow-hidden group hover:border-primary-container/50 transition-colors duration-300">
-                    <h3
-                        class="font-headline-md text-headline-md text-inverse-surface mb-md relative z-10 flex items-center gap-sm">
-                        <span class="material-symbols-outlined text-primary-container fill-icon">schedule</span> Giờ Mở
-                        Cửa
-                    </h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant relative z-10">Thứ Hai - Chủ
-                        Nhật<br /><span class="text-secondary-fixed">05:00 - 22:00</span></p>
-                </article>
-            </div>
-            <!-- Right Form Panel -->
-            <div
-                class="lg:col-span-7 bg-surface-container-low border border-outline-variant/20 p-md md:p-xl rounded-lg relative">
+
+    <main>
+      <!-- Hero Section -->
+      <header class="relative pt-32 pb-20 border-b border-borderGray">
+        <div class="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop"
+            class="w-full h-full object-cover"
+            alt="Contact Hero"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-bgMain via-bgMain/90 to-bgMain/70"
+          ></div>
+        </div>
+        <div class="relative z-10 w-full px-6 text-center slide-up">
+          <h1
+            class="font-poppins text-5xl md:text-6xl text-textWhite mb-6 uppercase"
+          >
+            Liên Hệ <span class="premium-text-gradient">Với Chúng Tôi</span>
+          </h1>
+          <p class="text-lg md:text-xl text-textGray max-w-2xl mx-auto">
+            Bắt đầu hành trình thay đổi vóc dáng của bạn. Hãy để lại thông tin,
+            đội ngũ chuyên gia của chúng tôi sẽ liên hệ tư vấn ngay lập tức.
+          </p>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <section class="py-24 bg-bgMain relative">
+        <div
+          class="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none"
+          style="
+            background-image: radial-gradient(
+              circle at right center,
+              #d4af37 0%,
+              transparent 70%
+            );
+          "
+        ></div>
+        <div class="w-full px-6 grid lg:grid-cols-2 gap-16">
+          <!-- Đặc Quyền / Thông tin -->
+          <div class="fade-in">
+            <h2 class="font-poppins text-3xl text-textWhite uppercase mb-8">
+              Đặc Quyền <span class="text-premiumGold">Hội Viên</span>
+            </h2>
+            <p class="text-textGray mb-8 leading-relaxed">
+              Khi để lại thông tin đăng ký, bạn sẽ nhận được sự hỗ trợ tận tình
+              từ đội ngũ chuyên gia của chúng tôi cùng những đặc quyền dành
+              riêng cho khách hàng mới.
+            </p>
+
+            <ul class="space-y-8 mb-12">
+              <li class="flex gap-6 items-start">
                 <div
-                    class="absolute inset-0 bg-gradient-to-br from-surface-container-high/20 to-transparent pointer-events-none rounded-lg">
+                  class="w-12 h-12 rounded-full bg-bgSub border border-premiumGold/30 flex items-center justify-center flex-shrink-0 text-premiumGold"
+                >
+                  <span class="material-symbols-outlined">fitness_center</span>
                 </div>
-                <h2 class="font-headline-lg text-headline-lg text-inverse-surface mb-lg">Gửi Yêu Cầu Tư Vấn</h2>
-                <div class="hidden mb-md p-md bg-secondary-container/20 border border-secondary-container text-on-surface rounded-lg flex items-center gap-sm"
-                    id="formSuccessMessage">
-                    <span class="material-symbols-outlined text-secondary-container">check_circle</span>
-                    Tin nhắn của bạn đã được nhận. Đội ngũ của chúng tôi sẽ liên hệ sớm.
+                <div>
+                  <h3
+                    class="text-textWhite font-bold uppercase tracking-widest text-sm mb-2"
+                  >
+                    Tư Vấn Lộ Trình 1-1
+                  </h3>
+                  <p class="text-textGray leading-relaxed m-0">
+                    Trao đổi trực tiếp với Master Trainer để xây dựng chương
+                    trình tập luyện cá nhân hóa theo thể trạng và mục tiêu
+                    riêng.
+                  </p>
                 </div>
-                <form class="flex flex-col gap-md relative z-10" id="contactForm" novalidate="">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-                        <div class="flex flex-col gap-xs">
-                            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                                for="fullName">HỌ VÀ TÊN</label>
-                            <input
-                                class="bg-surface border border-outline-variant/50 text-inverse-surface font-body-md text-body-md p-sm rounded-DEFAULT focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none"
-                                id="fullName" name="fullName" required="" type="text" />
-                            <span class="text-error font-label-sm text-label-sm hidden" id="fullNameError">Vui lòng nhập
-                                họ và tên.</span>
-                        </div>
-                        <div class="flex flex-col gap-xs">
-                            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                                for="phone">SỐ ĐIỆN THOẠI</label>
-                            <input
-                                class="bg-surface border border-outline-variant/50 text-inverse-surface font-body-md text-body-md p-sm rounded-DEFAULT focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none"
-                                id="phone" name="phone" pattern="[0-9]{10,15}" required="" type="tel" />
-                            <span class="text-error font-label-sm text-label-sm hidden" id="phoneError">Vui lòng nhập số
-                                điện thoại hợp lệ.</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-xs">
-                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                            for="email">ĐỊA CHỈ EMAIL</label>
-                        <input
-                            class="bg-surface border border-outline-variant/50 text-inverse-surface font-body-md text-body-md p-sm rounded-DEFAULT focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none"
-                            id="email" name="email" required="" type="email" />
-                        <span class="text-error font-label-sm text-label-sm hidden" id="emailError">Vui lòng nhập địa
-                            chỉ email hợp lệ.</span>
-                    </div>
-                    <div class="flex flex-col gap-xs">
-                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                            for="subject">CHỦ ĐỀ</label>
-                        <select
-                            class="bg-surface border border-outline-variant/50 text-inverse-surface font-body-md text-body-md p-sm rounded-DEFAULT focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none appearance-none"
-                            id="subject" name="subject" required="">
-                            <option value="">Chọn chủ đề...</option>
-                            <option value="membership">Tư vấn hội viên</option>
-                            <option value="pt">Huấn luyện cá nhân</option>
-                            <option value="facility">Tham quan phòng tập</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <span class="text-error font-label-sm text-label-sm hidden" id="subjectError">Vui lòng chọn chủ
-                            đề.</span>
-                    </div>
-                    <div class="flex flex-col gap-xs">
-                        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
-                            for="message">NỘI DUNG TIN NHẮN</label>
-                        <textarea
-                            class="bg-surface border border-outline-variant/50 text-inverse-surface font-body-md text-body-md p-sm rounded-DEFAULT focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all outline-none resize-none"
-                            id="message" name="message" required="" rows="5"></textarea>
-                        <span class="text-error font-label-sm text-label-sm hidden" id="messageError">Nội dung không
-                            được để trống.</span>
-                    </div>
-                    <button
-                        class="mt-sm bg-secondary-container hover:bg-secondary text-on-secondary-container font-label-bold text-label-bold uppercase tracking-widest py-md px-lg rounded-DEFAULT transition-colors duration-300 flex justify-center items-center gap-sm group self-start md:self-end"
-                        type="submit">
-                        GỬI YÊU CẦU
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </button>
-                </form>
+              </li>
+
+              <li class="flex gap-6 items-start">
+                <div
+                  class="w-12 h-12 rounded-full bg-bgSub border border-premiumGold/30 flex items-center justify-center flex-shrink-0 text-premiumGold"
+                >
+                  <span class="material-symbols-outlined">monitor_weight</span>
+                </div>
+                <div>
+                  <h3
+                    class="text-textWhite font-bold uppercase tracking-widest text-sm mb-2"
+                  >
+                    Phân Tích InBody Miễn Phí
+                  </h3>
+                  <p class="text-textGray m-0">
+                    Đo lường chính xác lượng mỡ, cơ và nước trong cơ thể bằng
+                    công nghệ InBody tiên tiến nhất hiện nay.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-6 items-start">
+                <div
+                  class="w-12 h-12 rounded-full bg-bgSub border border-premiumGold/30 flex items-center justify-center flex-shrink-0 text-premiumGold"
+                >
+                  <span class="material-symbols-outlined">restaurant_menu</span>
+                </div>
+                <div>
+                  <h3
+                    class="text-textWhite font-bold uppercase tracking-widest text-sm mb-2"
+                  >
+                    Định Hướng Dinh Dưỡng
+                  </h3>
+                  <p class="text-textGray m-0">
+                    Được chuyên gia tư vấn chế độ ăn uống khoa học, giúp tối ưu
+                    hóa kết quả tập luyện và duy trì vóc dáng.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-6 items-start">
+                <div
+                  class="w-12 h-12 rounded-full bg-bgSub border border-premiumGold/30 flex items-center justify-center flex-shrink-0 text-premiumGold"
+                >
+                  <span class="material-symbols-outlined">spa</span>
+                </div>
+                <div>
+                  <h3
+                    class="text-textWhite font-bold uppercase tracking-widest text-sm mb-2"
+                  >
+                    Trải Nghiệm Tiện Ích 5 Sao
+                  </h3>
+                  <p class="text-textGray m-0">
+                    Sử dụng không giới hạn phòng xông hơi, hồ bơi nhiệt đới và
+                    khu vực thư giãn cao cấp sau mỗi buổi tập.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <div class="pt-8 border-t border-borderGray">
+              <h3
+                class="text-textWhite font-bold uppercase tracking-widest text-sm mb-4"
+              >
+                Các Kênh Hỗ Trợ Khác
+              </h3>
+              <div class="grid grid-cols-2 gap-4 text-sm text-textGray">
+                <div>
+                  <span class="block text-textWhite font-bold mb-1"
+                    >Hợp Tác Doanh Nghiệp</span
+                  >
+                  corporate@fitlifepremium.com
+                </div>
+                <div>
+                  <span class="block text-textWhite font-bold mb-1"
+                    >Tuyển Dụng</span
+                  >
+                  hr@fitlifepremium.com
+                </div>
+              </div>
             </div>
-        </div>
-        <!-- Map Section -->
-        <section class="mt-xl relative rounded-lg overflow-hidden border border-outline-variant/20 h-96 group">
-            <div class="absolute inset-0 bg-surface-container animate-pulse z-0"></div>
-            <!-- Google Maps iframe styled to look like a dark mode map snippet -->
-            <iframe class="w-full h-full absolute inset-0 z-10 opacity-70 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style="filter: invert(90%) hue-rotate(180deg) grayscale(20%); border:0;"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.513809628038!2d106.6974465!3d10.7719001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f40a3b49e59%3A0xa1bd14e483a602db!2zUXXhuq1uIDEsIEjhu5MgQ2jDrSBNaW5o!5e0!3m2!1svi!2s"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <div class="absolute inset-0 border-[4px] border-surface z-20 pointer-events-none rounded-lg"></div>
-            <div
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center">
-                <div class="w-16 h-16 bg-secondary-container/20 rounded-full animate-ping absolute"></div>
+          </div>
+
+          <!-- Form Liên Hệ -->
+          <div
+            class="bg-bgSub p-8 md:p-10 border border-borderGray rounded shadow-2xl fade-in relative z-10"
+          >
+            <h2 class="font-poppins text-2xl text-textWhite uppercase mb-2">
+              Gửi Tin Nhắn
+            </h2>
+            <p class="text-sm text-textGray mb-8">
+              Vui lòng điền thông tin bên dưới, chúng tôi sẽ phản hồi trong thời
+              gian sớm nhất.
+            </p>
+
+            <form id="contactForm" class="space-y-6" novalidate>
+              <!-- Form Status Messages -->
+              <div
+                id="formSuccess"
+                class="hidden bg-green-900/30 border border-green-500 text-green-400 p-4 rounded text-sm flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined">check_circle</span>
+                Cảm ơn bạn! Thông tin đã được gửi thành công. Chúng tôi sẽ liên
+                hệ sớm.
+              </div>
+
+              <div
+                id="formError"
+                class="hidden bg-red-900/30 border border-red-500 text-red-400 p-4 rounded text-sm flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined">error</span>
+                Vui lòng kiểm tra lại các thông tin chưa hợp lệ bên dưới.
+              </div>
+
+              <!-- Fields -->
+              <div>
+                <label
+                  for="fullName"
+                  class="block text-xs uppercase tracking-widest text-textWhite font-bold mb-2"
+                  >Họ Và Tên <span class="text-accentOrange">*</span></label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  class="w-full bg-bgMain border border-borderGray rounded p-3 text-textWhite premium-input transition-colors"
+                  placeholder="Nguyễn Văn A"
+                  required
+                />
                 <span
-                    class="material-symbols-outlined text-secondary-container text-4xl fill-icon relative drop-shadow-[0_0_8px_rgba(254,107,0,0.8)]">location_on</span>
-            </div>
-        </section>
+                  class="text-red-500 text-xs hidden mt-1"
+                  id="fullNameError"
+                  >Vui lòng nhập họ tên của bạn.</span
+                >
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="email"
+                    class="block text-xs uppercase tracking-widest text-textWhite font-bold mb-2"
+                    >Email <span class="text-accentOrange">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full bg-bgMain border border-borderGray rounded p-3 text-textWhite premium-input transition-colors"
+                    placeholder="email@example.com"
+                    required
+                  />
+                  <span class="text-red-500 text-xs hidden mt-1" id="emailError"
+                    >Email không hợp lệ.</span
+                  >
+                </div>
+                <div>
+                  <label
+                    for="phone"
+                    class="block text-xs uppercase tracking-widest text-textWhite font-bold mb-2"
+                    >Số Điện Thoại
+                    <span class="text-accentOrange">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="w-full bg-bgMain border border-borderGray rounded p-3 text-textWhite premium-input transition-colors"
+                    placeholder="0901234567"
+                    required
+                  />
+                  <span class="text-red-500 text-xs hidden mt-1" id="phoneError"
+                    >Số điện thoại không hợp lệ.</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="subject"
+                  class="block text-xs uppercase tracking-widest text-textWhite font-bold mb-2"
+                  >Chủ Đề Quan Tâm</label
+                >
+                <select
+                  id="subject"
+                  class="w-full bg-bgMain border border-borderGray rounded p-3 text-textWhite premium-input transition-colors"
+                >
+                  <option value="dang-ky">Đăng ký Thẻ Hội Viên</option>
+                  <option value="pt">Huấn luyện viên cá nhân (PT)</option>
+                  <option value="class">Tham gia Lớp học nhóm</option>
+                  <option value="other">Khác</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-xs uppercase tracking-widest text-textWhite font-bold mb-2"
+                  >Nội Dung Tin Nhắn
+                  <span class="text-accentOrange">*</span></label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full bg-bgMain border border-borderGray rounded p-3 text-textWhite premium-input transition-colors resize-none"
+                  placeholder="Hãy cho chúng tôi biết mục tiêu tập luyện của bạn..."
+                  required
+                ></textarea>
+                <span class="text-red-500 text-xs hidden mt-1" id="messageError"
+                  >Vui lòng nhập nội dung tin nhắn.</span
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-premiumGold text-bgMain font-bold uppercase tracking-widest py-4 rounded hover:bg-white transition-colors"
+              >
+                Gửi Yêu Cầu
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
+
     <!-- Footer -->
-    <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest relative w-full pt-xl pb-md border-t border-outline-variant/20">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter max-w-container-max mx-auto mb-12">
-            <div class="md:col-span-1">
-                <a href="index.html" class="font-display-lg text-primary mb-4 block text-2xl italic tracking-tighter">FitLife
-                    Premium</a>
-                <p class="text-on-surface-variant font-body-sm mb-4">Tập luyện hiệu suất cao cấp cho những người yêu cầu
-                    sự hoàn hảo.</p>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Điều Hướng</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="index.html">Trang
-                            Chủ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="classes.html">Lớp Học</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Pháp Lý</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Chính Sách Bảo Mật</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Điều Khoản Dịch Vụ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Hỏi Đáp</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Liên Hệ</h4>
-                <p class="text-on-surface-variant font-body-sm mb-4">123 Đại Lộ Elite, Quận 1, TP. Hồ Chí Minh</p>
-                <p class="text-on-surface-variant font-body-sm">contact@fitlifepremium.com</p>
-            </div>
+    <footer class="bg-bgMain pt-20 pb-10 border-t border-borderGray">
+      <div class="w-full px-6 grid md:grid-cols-4 gap-12 mb-16">
+        <div class="md:col-span-1">
+          <a
+            href="index.html"
+            class="font-poppins text-2xl text-textWhite tracking-tighter block mb-6"
+            >FIT<span class="text-premiumGold">LIFE</span></a
+          >
+          <p class="text-sm leading-relaxed mb-6">
+            Tập luyện hiệu suất cao cấp cho những người yêu cầu sự hoàn hảo.
+            Nâng tầm thể hình thành nghệ thuật.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+              >FB</a
+            >
+            <a
+              href="#"
+              class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+              >IG</a
+            >
+            <a
+              href="#"
+              class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+              >YT</a
+            >
+          </div>
         </div>
-        <div class="border-t border-outline-variant/20 pt-6 text-center">
-            <p class="text-on-surface-variant font-body-sm">© 2024 FitLife Premium. Bảo lưu mọi quyền.</p>
+
+        <div>
+          <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">
+            Liên Kết Nhanh
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="index.html"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Trang Chủ</a
+              >
+            </li>
+            <li>
+              <a
+                href="classes.html"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Lớp Học</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Liên Hệ</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <div>
+          <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">
+            Dịch Vụ
+          </h4>
+          <ul class="space-y-3">
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Huấn Luyện Cá Nhân</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Tập Luyện Nhóm</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-sm hover:text-premiumGold transition-colors"
+                >Thẻ Hội Viên VIP</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">
+            Liên Hệ
+          </h4>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <span class="material-symbols-outlined text-premiumGold text-xl"
+                >location_on</span
+              >
+              <span class="text-sm"
+                >123 Đại Lộ Elite, Quận 1<br />TP. Hồ Chí Minh</span
+              >
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="material-symbols-outlined text-premiumGold text-xl"
+                >phone</span
+              >
+              <span class="text-sm">0909 123 456</span>
+            </li>
+            <li class="flex gap-3 items-center">
+              <span class="material-symbols-outlined text-premiumGold text-xl"
+                >mail</span
+              >
+              <span class="text-sm">contact@fitlifepremium.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-full px-6 pt-8 border-t border-borderGray text-center">
+        <p class="text-sm">
+          &copy; 2026 FitLife Premium. Đã đăng ký bản quyền.
+        </p>
+      </div>
     </footer>
+
     <script>
-        // Form Validation Logic
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contactForm');
-            const successMsg = document.getElementById('formSuccessMessage');
+      // Form Validation Logic
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-            const validateField = (input, errorId, validationFn) => {
-                const errorElement = document.getElementById(errorId);
-                const isValid = validationFn(input.value);
+          let isValid = true;
 
-                if (!isValid) {
-                    input.classList.add('border-error');
-                    input.classList.remove('border-outline-variant/50');
-                    errorElement.classList.remove('hidden');
-                } else {
-                    input.classList.remove('border-error');
-                    input.classList.add('border-outline-variant/50');
-                    errorElement.classList.add('hidden');
-                }
-                return isValid;
-            };
+          // Get fields
+          const fullName = document.getElementById("fullName");
+          const email = document.getElementById("email");
+          const phone = document.getElementById("phone");
+          const message = document.getElementById("message");
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
+          // Get error spans
+          const fullNameError = document.getElementById("fullNameError");
+          const emailError = document.getElementById("emailError");
+          const phoneError = document.getElementById("phoneError");
+          const messageError = document.getElementById("messageError");
 
-                const isNameValid = validateField(form.fullName, 'fullNameError', val => val.trim().length > 0);
-                const isPhoneValid = validateField(form.phone, 'phoneError', val => /^[0-9]{10,15}$/.test(val.trim()));
-                const isEmailValid = validateField(form.email, 'emailError', val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()));
-                const isSubjectValid = validateField(form.subject, 'subjectError', val => val !== "");
-                const isMessageValid = validateField(form.message, 'messageError', val => val.trim().length > 0);
+          // Status boxes
+          const formSuccess = document.getElementById("formSuccess");
+          const formError = document.getElementById("formError");
 
-                if (isNameValid && isPhoneValid && isEmailValid && isSubjectValid && isMessageValid) {
-                    // Simulate submission
-                    form.classList.add('opacity-50', 'pointer-events-none');
-                    setTimeout(() => {
-                        form.reset();
-                        form.classList.remove('opacity-50', 'pointer-events-none');
-                        successMsg.classList.remove('hidden');
+          // Regex patterns
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const phonePattern = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
 
-                        // Hide success message after 5 seconds
-                        setTimeout(() => {
-                            successMsg.classList.add('hidden');
-                        }, 5000);
-                    }, 800);
-                }
-            });
+          // Reset errors
+          fullNameError.classList.add("hidden");
+          fullName.classList.remove("border-red-500");
+          emailError.classList.add("hidden");
+          email.classList.remove("border-red-500");
+          phoneError.classList.add("hidden");
+          phone.classList.remove("border-red-500");
+          messageError.classList.add("hidden");
+          message.classList.remove("border-red-500");
+          formError.classList.add("hidden");
+          formSuccess.classList.add("hidden");
 
-            // Mobile Nav Toggle
-            const mobileNavToggle = document.getElementById('mobileNavToggle');
-            const mobileNav = document.getElementById('mobileNav');
+          // Validate Full Name
+          if (!fullName.value.trim()) {
+            fullNameError.classList.remove("hidden");
+            fullName.classList.add("border-red-500");
+            isValid = false;
+          }
 
-            mobileNavToggle.addEventListener('click', () => {
-                const isClosed = mobileNav.classList.contains('-translate-x-full');
-                if (isClosed) {
-                    mobileNav.classList.remove('-translate-x-full');
-                    mobileNavToggle.querySelector('span').textContent = 'close';
-                } else {
-                    mobileNav.classList.add('-translate-x-full');
-                    mobileNavToggle.querySelector('span').textContent = 'menu';
-                }
-            });
+          // Validate Email
+          if (!emailPattern.test(email.value.trim())) {
+            emailError.classList.remove("hidden");
+            email.classList.add("border-red-500");
+            isValid = false;
+          }
+
+          // Validate Phone
+          if (!phonePattern.test(phone.value.trim())) {
+            phoneError.classList.remove("hidden");
+            phone.classList.add("border-red-500");
+            isValid = false;
+          }
+
+          // Validate Message
+          if (!message.value.trim()) {
+            messageError.classList.remove("hidden");
+            message.classList.add("border-red-500");
+            isValid = false;
+          }
+
+          // Final check
+          if (isValid) {
+            formSuccess.classList.remove("hidden");
+            this.reset(); // Clear form
+          } else {
+            formError.classList.remove("hidden");
+          }
         });
-    </script>
-</body>
 
+      // Scroll animations & Header effect
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document.querySelectorAll(".fade-in, .slide-up").forEach((element) => {
+          observer.observe(element);
+        });
+
+        // Header scroll effect
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("shadow-lg", "border-premiumGold/20");
+            header.classList.remove("border-borderGray");
+          } else {
+            header.classList.remove("shadow-lg", "border-premiumGold/20");
+            header.classList.add("border-borderGray");
+          }
+        });
+
+        // Mobile menu toggle
+        const menuBtn = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.getElementById("mobile-menu");
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener("click", () => {
+          isMenuOpen = !isMenuOpen;
+          if (isMenuOpen) {
+            mobileMenu.classList.remove("translate-x-full");
+            menuBtn.innerHTML =
+              '<span class="material-symbols-outlined text-3xl">close</span>';
+          } else {
+            mobileMenu.classList.add("translate-x-full");
+            menuBtn.innerHTML =
+              '<span class="material-symbols-outlined text-3xl">menu</span>';
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

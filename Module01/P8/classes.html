@@ -1,368 +1,645 @@
-<!DOCTYPE html>
-<html class="dark" lang="vi">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Lớp Học &amp; Chương Trình - FitLife Premium</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800&amp;display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet">
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed": "#ffe088",
-                        "on-secondary-container": "#572000",
-                        "on-background": "#eae1d4",
-                        "surface-container-low": "#1f1b13",
-                        "on-primary": "#3c2f00",
-                        "secondary-fixed": "#ffdbcc",
-                        "surface-container-high": "#2d2a21",
-                        "surface-dim": "#16130b",
-                        "on-primary-fixed": "#241a00",
-                        "surface-container": "#231f17",
-                        "on-secondary-fixed-variant": "#7a3000",
-                        "on-tertiary-fixed": "#00174b",
-                        "error-container": "#93000a",
-                        "on-primary-container": "#554300",
-                        "secondary-container": "#fe6b00",
-                        "on-error": "#690005",
-                        "primary-fixed-dim": "#e9c349",
-                        "surface-container-highest": "#38342b",
-                        "on-tertiary": "#082b72",
-                        "surface-tint": "#e9c349",
-                        "secondary-fixed-dim": "#ffb693",
-                        "outline": "#99907c",
-                        "primary-container": "#d4af37",
-                        "outline-variant": "#4d4635",
-                        "surface-container-lowest": "#110e07",
-                        "on-tertiary-fixed-variant": "#27438a",
-                        "surface-bright": "#3d392f",
-                        "on-surface": "#eae1d4",
-                        "surface": "#16130b",
-                        "secondary": "#ffb693",
-                        "tertiary-fixed": "#dbe1ff",
-                        "tertiary-fixed-dim": "#b4c5ff",
-                        "on-primary-fixed-variant": "#574500",
-                        "tertiary": "#bfcdff",
-                        "tertiary-container": "#97b0ff",
-                        "on-secondary-fixed": "#351000",
-                        "inverse-primary": "#735c00",
-                        "primary": "#f2ca50",
-                        "on-surface-variant": "#d0c5af",
-                        "error": "#ffb4ab",
-                        "inverse-on-surface": "#343027",
-                        "inverse-surface": "#eae1d4",
-                        "on-error-container": "#ffdad6",
-                        "surface-variant": "#38342b",
-                        "on-tertiary-container": "#254188",
-                        "background": "#16130b",
-                        "on-secondary": "#561f00"
+<!doctype html>
+<html class="dark scroll-smooth" lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>FitLife Premium | Lớp Học & Lịch Tập</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            bgMain: "#0A0A0A",
+                            bgSub: "#141414",
+                            premiumGold: "#D4AF37",
+                            accentOrange: "#FF6B00",
+                            textWhite: "#FFFFFF",
+                            textGray: "#B5B5B5",
+                            borderGray: "#333333",
+                        },
+                        fontFamily: {
+                            poppins: ["Poppins", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "lg": "48px",
-                        "xs": "4px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "md": "24px",
-                        "xl": "80px",
-                        "container-max": "1280px",
-                        "sm": "12px"
-                    },
-                    "fontFamily": {
-                        "label-sm": ["Inter"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "display-lg": ["Montserrat"],
-                        "display-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
-                    }
-                }
+                },
+            };
+        </script>
+        <style>
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 0.8s ease-out,
+                    transform 0.8s ease-out;
             }
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
 
-        .icon-fill {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-        body {
-            background-color: #0F0F0F;
-            color: #eae1d4;
-        }
+            .slide-up {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 1s ease-out;
+            }
 
-        .premium-border {
-            border-top: 2px solid #D4AF37;
-        }
-    </style>
-</head>
+            .slide-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-<body
-    class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation (Desktop) -->
-    <nav class="hidden md:block fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-surface/90 shadow-sm border-b border-outline-variant/30 transition-all duration-300">
-        <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-            <a class="font-display-lg text-primary dark:text-primary-fixed italic tracking-tighter text-3xl" href="index.html">
-                FitLife Premium
-            </a>
-            <section class="flex gap-8 items-center">
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="index.html">Trang Chủ</a>
-                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="classes.html">Lớp Học</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="contact.html">Liên Hệ</a>
-                <a href="contact.html"
-                    class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded font-label-bold text-label-bold uppercase tracking-wider hover:opacity-90 transition-opacity inline-block">
-                    Tham Gia Ngay
-                </a>
-            </section>
-        </div>
-    </nav>
-    <!-- Side Navigation (Mobile) -->
-    <nav aria-label="Mobile Navigation"
-        class="md:hidden fixed inset-y-0 left-0 w-64 z-[60] bg-surface-container-highest dark:bg-surface-container-highest shadow-xl flex flex-col h-full py-8 transform -translate-x-full transition-transform duration-300"
-        id="mobile-nav">
-        <header class="px-6 mb-8">
-            <h2 class="text-primary font-display-lg-mobile" style="font-size: 24px;">FitLife Premium</h2>
-            <p class="text-on-surface-variant text-sm mt-1">Hiệu Suất Tối Đa</p>
-        </header>
-        <section class="flex flex-col gap-2 flex-grow">
-            <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200 rounded-lg"
-                href="index.html">
-                <span class="material-symbols-outlined" data-icon="home">home</span>
-                <span class="font-headline-md-mobile text-headline-md-mobile text-lg">Trang Chủ</span>
-            </a>
-            <a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200"
-                href="classes.html">
-                <span class="material-symbols-outlined icon-fill" data-icon="fitness_center">fitness_center</span>
-                <span class="font-headline-md-mobile text-headline-md-mobile text-lg">Lớp Học</span>
-            </a>
-            <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200 rounded-lg"
-                href="contact.html">
-                <span class="material-symbols-outlined" data-icon="mail">mail</span>
-                <span class="font-headline-md-mobile text-headline-md-mobile text-lg">Liên Hệ</span>
-            </a>
-            <footer class="mt-auto px-4 pb-4">
-                <a href="contact.html"
-                    class="w-full bg-secondary-container text-on-secondary-container py-4 rounded-lg font-label-bold text-label-bold uppercase tracking-wider flex items-center justify-center gap-2">
-                    <span class="material-symbols-outlined" data-icon="star">star</span>
-                    Tham Gia Ngay
-                </a>
-            </footer>
-        </section>
-    </nav>
-    <!-- Mobile Nav Toggle -->
-    <button class="md:hidden fixed top-4 right-4 z-50 p-2 bg-surface-container rounded-lg text-primary"
-        onclick="document.getElementById('mobile-nav').classList.toggle('-translate-x-full')">
-        <span class="material-symbols-outlined">menu</span>
-    </button>
-    <!-- Main Content -->
-    <main class="flex-grow pt-24 md:pt-32 pb-xl">
-        <!-- Hero Section -->
-        <section class="max-w-container-max mx-auto px-gutter mb-xl relative">
-            <figure
-                class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none m-0">
-            </figure>
-            <article class="relative z-20 max-w-2xl py-lg">
-                <h1 class="font-display-lg text-display-lg text-primary-fixed mb-6 drop-shadow-md">Lớp Học &amp; Chương
-                    Trình</h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant">Khám phá các chương trình tập luyện đa dạng
-                    được thiết kế phù hợp với mọi cấp độ thể hình.</p>
-            </article>
-        </section>
-        <!-- Classes Grid -->
-        <section class="max-w-container-max mx-auto px-gutter mb-xl">
-            <h2 class="font-headline-lg text-headline-lg mb-8 text-on-background flex items-center gap-3">
-                <span class="w-8 h-1 bg-primary-container block"></span> Chương Trình Nổi Bật
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <article
-                    class="bg-[#1C1C1C] rounded-lg overflow-hidden border border-[#2A2A2A] premium-border hover:border-primary-container/50 transition-colors group">
-                    <figure class="h-48 relative overflow-hidden bg-surface-container-high m-0">
-                        <img alt="Gym Training"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            data-alt="A high-end, dramatic gym scene showing heavy weights and modern equipment in a dark, moody environment with focused spotlighting, reflecting a luxury fitness aesthetic."
-                            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop">
-                        <figcaption
-                            class="absolute top-4 right-4 bg-primary-container/90 backdrop-blur-sm text-on-primary-container px-3 py-1 rounded text-xs font-bold uppercase tracking-wide">
-                            Cao Cấp</figcaption>
-                    </figure>
-                    <div class="p-6">
-                        <h3 class="font-headline-md text-headline-md mb-2">Sức Mạnh &amp; Thể Lực</h3>
-                        <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Xây dựng sức mạnh chức năng và bùng
-                            nổ với thiết bị chuyên dụng...</p>
-                        <div class="flex items-center gap-4 text-xs text-on-surface-variant uppercase tracking-wider">
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">schedule</span> 60 PHÚT</span>
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span> NÂNG CAO</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card 2 -->
-                <article
-                    class="bg-[#1C1C1C] rounded-lg overflow-hidden border border-[#2A2A2A] hover:border-primary-container/30 transition-colors group">
-                    <figure class="h-48 relative overflow-hidden bg-surface-container-high m-0">
-                        <img alt="Yoga"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            data-alt="A serene, minimalist yoga studio with warm, soft lighting, featuring high-quality wooden floors and subtle architectural details, evoking luxury and mindfulness."
-                            src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=1470&auto=format&fit=crop">
-                    </figure>
-                    <div class="p-6">
-                        <h3 class="font-headline-md text-headline-md mb-2">Yoga Vinyasa</h3>
-                        <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Kết hợp hơi thở và chuyển động
-                            trong chuỗi động tác năng động...</p>
-                        <div class="flex items-center gap-4 text-xs text-on-surface-variant uppercase tracking-wider">
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">schedule</span> 75 PHÚT</span>
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">signal_cellular_alt_1_bar</span> MỌI CẤP
-                                ĐỘ</span>
-                        </div>
-                    </div>
-                </article>
-                <!-- Card 3 -->
-                <article
-                    class="bg-[#1C1C1C] rounded-lg overflow-hidden border border-[#2A2A2A] hover:border-primary-container/30 transition-colors group">
-                    <figure class="h-48 relative overflow-hidden bg-surface-container-high m-0">
-                        <img alt="HIIT"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            data-alt="A high-intensity interval training session in a dark, atmospheric studio with striking orange and white lighting accents, showing dynamic movement and elite performance."
-                            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470&auto=format&fit=crop">
-                    </figure>
-                    <div class="p-6">
-                        <h3 class="font-headline-md text-headline-md mb-2">Đốt Cháy Calo HIIT</h3>
-                        <p class="text-on-surface-variant text-sm mb-4 line-clamp-2">Vượt qua giới hạn tim mạch với lớp
-                            học cường độ cao...</p>
-                        <div class="flex items-center gap-4 text-xs text-on-surface-variant uppercase tracking-wider">
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">schedule</span> 45 PHÚT</span>
-                            <span class="flex items-center gap-1"><span
-                                    class="material-symbols-outlined text-sm">signal_cellular_alt</span> TRUNG
-                                CẤP</span>
-                        </div>
-                    </div>
-                </article>
+            .premium-text-gradient {
+                background: linear-gradient(to right, #d4af37, #ff6b00);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .hover-lift {
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.3);
+            }
+
+            /* Table Responsive Styles */
+            .schedule-table th,
+            .schedule-table td {
+                border: 1px solid #333333;
+            }
+        </style>
+    </head>
+
+    <body class="bg-bgMain text-textGray font-inter antialiased overflow-x-hidden selection:bg-premiumGold selection:text-bgMain">
+        <!-- Header -->
+        <nav id="header" class="fixed top-0 w-full z-50 bg-bgMain/80 backdrop-blur-md border-b border-borderGray transition-all duration-300">
+            <div class="w-full px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="font-poppins text-3xl text-textWhite tracking-tighter">FIT<span class="text-premiumGold">LIFE</span></a>
+
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="index.html" class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+                        >Trang Chủ</a
+                    >
+                    <a
+                        href="classes.html"
+                        class="text-premiumGold font-semibold border-b-2 border-premiumGold pb-1 uppercase tracking-widest text-sm hover:text-premiumGold transition-colors"
+                        >Lớp Học</a
+                    >
+                    <a
+                        href="contact.html"
+                        class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+                        >Liên Hệ</a
+                    >
+                    <a
+                        href="contact.html"
+                        class="bg-premiumGold text-bgMain px-6 py-2 rounded font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors"
+                        >Đăng Ký Ngay</a
+                    >
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-textWhite">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
             </div>
-        </section>
-        <!-- Trainers Section -->
-        <section class="max-w-container-max mx-auto px-gutter mb-xl">
-            <h2 class="font-headline-lg text-headline-lg mb-8 text-on-background flex items-center gap-3">
-                <span class="w-8 h-1 bg-secondary-container block"></span> Huấn Luyện Viên Chuyên Nghiệp
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Trainer 1 -->
-                <article class="bg-[#1C1C1C] rounded-lg p-6 border border-[#2A2A2A] flex flex-col items-center text-center">
-                    <figure class="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-primary-container p-1 m-0">
-                        <img alt="Lead Trainer" class="w-full h-full rounded-full object-cover"
-                            data-alt="A professional portrait of a male lead fitness trainer in a dark, luxurious gym environment, conveying authority, expertise, and high performance."
-                            src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=1470&auto=format&fit=crop">
-                    </figure>
-                    <h4 class="font-headline-md text-headline-md text-lg mb-1">Marcus Thorne</h4>
-                    <p class="text-primary-fixed text-sm font-label-bold uppercase tracking-wider mb-2">Huấn Luyện Viên
-                        Trưởng</p>
-                    <p class="text-on-surface-variant text-xs mb-4">10+ Năm Kinh Nghiệm</p>
-                    <nav class="flex gap-3 text-on-surface-variant">
-                        <span
-                            class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">link</span>
-                    </nav>
-                </article>
-                <!-- Trainer 2 -->
-                <article class="bg-[#1C1C1C] rounded-lg p-6 border border-[#2A2A2A] flex flex-col items-center text-center">
-                    <figure class="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-[#2A2A2A] p-1 m-0">
-                        <img alt="Yoga Expert" class="w-full h-full rounded-full object-cover"
-                            data-alt="A portrait of a female yoga instructor in a serene, warmly lit, high-end studio setting, exuding calmness, strength, and professionalism."
-                            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1470&auto=format&fit=crop">
-                    </figure>
-                    <h4 class="font-headline-md text-headline-md text-lg mb-1">Elena Rostova</h4>
-                    <p class="text-primary-fixed text-sm font-label-bold uppercase tracking-wider mb-2">Bậc Thầy Yoga
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <nav
+            id="mobile-menu"
+            class="fixed inset-0 bg-bgMain z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 md:hidden"
+        >
+            <a href="index.html" class="text-textWhite text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4">Trang Chủ</a>
+            <a href="classes.html" class="text-premiumGold text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4">Lớp Học</a>
+            <a href="contact.html" class="text-textWhite text-2xl font-poppins uppercase mb-8 border-b border-borderGray pb-4">Liên Hệ</a>
+            <a href="contact.html" class="bg-premiumGold text-bgMain text-center py-4 rounded font-bold uppercase tracking-widest">Đăng Ký Tập Thử</a>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <header class="relative pt-32 pb-20 border-b border-borderGray">
+                <div class="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop"
+                        class="w-full h-full object-cover"
+                        alt="Classes Hero"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-bgMain via-bgMain/90 to-bgMain/60"></div>
+                </div>
+                <div class="relative z-10 w-full px-6 text-center slide-up">
+                    <h1 class="font-poppins text-5xl md:text-6xl text-textWhite mb-6 uppercase">
+                        Lớp Học &
+                        <span class="premium-text-gradient">Chương Trình Tập</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-textGray max-w-2xl mx-auto">
+                        Lựa chọn chương trình phù hợp với mục tiêu của bạn. Đa dạng bộ môn, khung giờ linh hoạt cùng đội ngũ huấn luyện viên hàng đầu.
                     </p>
-                    <p class="text-on-surface-variant text-xs mb-4">8 Năm Kinh Nghiệm</p>
-                    <nav class="flex gap-3 text-on-surface-variant">
-                        <span
-                            class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors">link</span>
-                    </nav>
-                </article>
-            </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest relative w-full pt-xl pb-md border-t border-outline-variant/20">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter max-w-container-max mx-auto mb-12">
-            <div class="md:col-span-1">
-                <a href="index.html" class="font-display-lg text-primary mb-4 block text-2xl italic tracking-tighter">FitLife
-                    Premium</a>
-                <p class="text-on-surface-variant font-body-sm mb-4">Tập luyện hiệu suất cao cấp cho những người yêu cầu
-                    sự hoàn hảo.</p>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Điều Hướng</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="index.html">Trang
-                            Chủ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="classes.html">Lớp Học</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Pháp Lý</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Chính Sách Bảo Mật</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Điều Khoản Dịch Vụ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Hỏi Đáp</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Liên Hệ</h4>
-                <p class="text-on-surface-variant font-body-sm mb-4">123 Đại Lộ Elite, Quận 1, TP. Hồ Chí Minh</p>
-                <p class="text-on-surface-variant font-body-sm">contact@fitlifepremium.com</p>
-            </div>
-        </div>
-        <div class="border-t border-outline-variant/20 pt-6 text-center">
-            <p class="text-on-surface-variant font-body-sm">© 2024 FitLife Premium. Bảo lưu mọi quyền.</p>
-        </div>
-    </footer>
+                </div>
+            </header>
 
+            <!-- Danh Sách Lớp Học -->
+            <section class="py-24 bg-bgMain">
+                <div class="w-full px-6">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="font-poppins text-4xl text-textWhite uppercase mb-2">Các Bộ Môn <span class="text-premiumGold">Nổi Bật</span></h2>
+                        <p class="text-textGray">Khám phá đa dạng các lớp học được thiết kế cho mọi cấp độ.</p>
+                    </div>
 
-</body>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Class 1 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Gym"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Gym Sức Mạnh
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">Sức Mạnh Khối Cơ (Gym)</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Lớp học tập trung vào các bài tập tạ nặng, tối đa hóa sức mạnh và khối lượng cơ bắp.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">60 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Trung Bình</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">400-600</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Class 2 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=1470&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Yoga"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Tâm Trí
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">Zen Yoga</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Cân bằng tâm trí, tăng cường sự dẻo dai và phục hồi cơ thể với chuỗi động tác Asana thư giãn.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">60 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Mọi Cấp Độ</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">200-300</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Class 3 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Pilates"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Lõi Cơ
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">Pilates Reformer</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Sử dụng máy Reformer nhập khẩu để siết chặt vùng lõi (core), định hình vóc dáng thon gọn.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">45 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Trung Bình</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">250-400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Class 4 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=1470&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Zumba"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Cardio Nhảy
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">Zumba Fitness</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Hòa mình vào âm nhạc Latin sôi động, đốt cháy calo cực mạnh trong không khí vui tươi, cuồng nhiệt.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">60 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Cơ Bản</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">500-700</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Class 5 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=80&w=1631&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="HIIT"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Đốt Mỡ Nhanh
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">HIIT Đột Phá</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Luyện tập cường độ cao ngắt quãng giúp đẩy nhịp tim lên tối đa, đốt mỡ thừa ngay cả sau khi tập.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">45 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Nâng Cao</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">600-800</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- Class 6 -->
+                        <article class="bg-bgSub border border-borderGray rounded overflow-hidden hover-lift fade-in group">
+                            <div class="relative h-56 overflow-hidden">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="CrossFit"
+                                />
+                                <div class="absolute inset-0 bg-gradient-to-t from-bgSub to-transparent"></div>
+                                <div
+                                    class="absolute bottom-4 left-4 bg-premiumGold text-bgMain px-3 py-1 text-xs font-bold uppercase tracking-wider rounded"
+                                >
+                                    Thử Thách
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="font-poppins text-2xl text-textWhite mb-3">CrossFit Chiến Binh</h3>
+                                <p class="text-sm text-textGray mb-6 line-clamp-2">
+                                    Kết hợp cử tạ, thể dục dụng cụ và cardio để rèn luyện toàn diện tốc độ, sức bền và sự bùng nổ.
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-xs mb-6 pt-4 border-t border-borderGray">
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Thời Lượng</span>
+                                        <span class="text-premiumGold">60 Phút</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Cấp Độ</span>
+                                        <span class="text-premiumGold">Chuyên Sâu</span>
+                                    </div>
+                                    <div>
+                                        <span class="block text-textWhite font-bold mb-1">Calo</span>
+                                        <span class="text-premiumGold">700-1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Lịch Học -->
+            <section class="py-24 bg-bgSub border-y border-borderGray">
+                <div class="w-full px-6">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="font-poppins text-4xl text-textWhite uppercase mb-4">Lịch Học <span class="text-premiumGold">Tuần Này</span></h2>
+                        <p class="text-textGray">Cập nhật lịch học mới nhất để không bỏ lỡ bất kỳ buổi tập nào.</p>
+                    </div>
+
+                    <div class="overflow-x-auto fade-in bg-bgMain rounded border border-borderGray">
+                        <table class="w-full schedule-table text-center text-sm">
+                            <thead>
+                                <tr class="bg-borderGray/50 text-textWhite font-poppins uppercase tracking-wider">
+                                    <th class="p-4 w-40 border-b-2 border-premiumGold">Thời Gian</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Hai</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Ba</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Tư</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Năm</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Sáu</th>
+                                    <th class="p-4 border-b-2 border-premiumGold">Thứ Bảy</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-textGray">
+                                <tr class="hover:bg-bgSub transition-colors">
+                                    <td class="p-4 font-bold text-premiumGold">06:00 - 07:00</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zen Yoga</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">HIIT Đột Phá</div>
+                                        <div>Khu Chức Năng</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Pilates</div>
+                                        <div>Studio 2</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Gym Sức Mạnh</div>
+                                        <div>Khu Tạ Tự Do</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zen Yoga</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">CrossFit</div>
+                                        <div>Khu Vực Ngoài</div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-bgSub transition-colors">
+                                    <td class="p-4 font-bold text-premiumGold">08:00 - 09:00</td>
+                                    <td class="p-4">-</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zumba Fitness</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">-</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zen Yoga</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">-</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zumba Fitness</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-bgSub transition-colors">
+                                    <td class="p-4 font-bold text-premiumGold">17:00 - 18:00</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zumba Fitness</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Gym Sức Mạnh</div>
+                                        <div>Khu Tạ Tự Do</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">HIIT Đột Phá</div>
+                                        <div>Khu Chức Năng</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Pilates</div>
+                                        <div>Studio 2</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zumba Fitness</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">-</td>
+                                </tr>
+                                <tr class="hover:bg-bgSub transition-colors">
+                                    <td class="p-4 font-bold text-premiumGold">19:00 - 20:00</td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">CrossFit</div>
+                                        <div>Khu Vực Ngoài</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Zen Yoga</div>
+                                        <div>Studio 1</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">CrossFit</div>
+                                        <div>Khu Vực Ngoài</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">HIIT Đột Phá</div>
+                                        <div>Khu Chức Năng</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Gym Sức Mạnh</div>
+                                        <div>Khu Tạ Tự Do</div>
+                                    </td>
+                                    <td class="p-4">
+                                        <div class="font-bold text-textWhite">Pilates</div>
+                                        <div>Studio 2</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a
+                            href="contact.html"
+                            class="bg-premiumGold text-bgMain px-8 py-3 rounded font-bold uppercase tracking-widest hover:bg-white transition-colors text-sm inline-block"
+                            >Đăng Ký Tham Gia Lớp</a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-bgMain pt-20 pb-10 border-t border-borderGray">
+            <div class="w-full px-6 grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="font-poppins text-2xl text-textWhite tracking-tighter block mb-6"
+                        >FIT<span class="text-premiumGold">LIFE</span></a
+                    >
+                    <p class="text-sm leading-relaxed mb-6">
+                        Tập luyện hiệu suất cao cấp cho những người yêu cầu sự hoàn hảo. Nâng tầm thể hình thành nghệ thuật.
+                    </p>
+                    <div class="flex gap-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >FB</a
+                        >
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >IG</a
+                        >
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >YT</a
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Liên Kết Nhanh</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="index.html" class="text-sm hover:text-premiumGold transition-colors">Trang Chủ</a>
+                        </li>
+                        <li>
+                            <a href="classes.html" class="text-sm hover:text-premiumGold transition-colors">Lớp Học</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-sm hover:text-premiumGold transition-colors">Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Dịch Vụ</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Huấn Luyện Cá Nhân</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Tập Luyện Nhóm</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Thẻ Hội Viên VIP</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Liên Hệ</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">location_on</span>
+                            <span class="text-sm">123 Đại Lộ Elite, Quận 1<br />TP. Hồ Chí Minh</span>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">phone</span>
+                            <span class="text-sm">0909 123 456</span>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">mail</span>
+                            <span class="text-sm">contact@fitlifepremium.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w-full px-6 pt-8 border-t border-borderGray text-center">
+                <p class="text-sm">&copy; 2026 FitLife Premium. Đã đăng ký bản quyền.</p>
+            </div>
+        </footer>
+
+        <script>
+            // Scroll animations
+            document.addEventListener("DOMContentLoaded", () => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.1 },
+                );
+
+                document.querySelectorAll(".fade-in, .slide-up").forEach((element) => {
+                    observer.observe(element);
+                });
+
+                // Header scroll effect
+                const header = document.getElementById("header");
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add("shadow-lg", "border-premiumGold/20");
+                        header.classList.remove("border-borderGray");
+                    } else {
+                        header.classList.remove("shadow-lg", "border-premiumGold/20");
+                        header.classList.add("border-borderGray");
+                    }
+                });
+
+                // Mobile menu toggle
+                const menuBtn = document.querySelector("button.md\\:hidden");
+                const mobileMenu = document.getElementById("mobile-menu");
+                let isMenuOpen = false;
+
+                menuBtn.addEventListener("click", () => {
+                    isMenuOpen = !isMenuOpen;
+                    if (isMenuOpen) {
+                        mobileMenu.classList.remove("translate-x-full");
+                        menuBtn.innerHTML = '<span class="material-symbols-outlined text-3xl">close</span>';
+                    } else {
+                        mobileMenu.classList.add("translate-x-full");
+                        menuBtn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

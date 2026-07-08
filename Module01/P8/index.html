@@ -1,398 +1,608 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html class="dark scroll-smooth" lang="vi">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>FitLife Premium | Elite Performance</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-fixed": "#ffe088",
-                        "on-secondary-container": "#572000",
-                        "on-background": "#eae1d4",
-                        "surface-container-low": "#1f1b13",
-                        "on-primary": "#3c2f00",
-                        "secondary-fixed": "#ffdbcc",
-                        "surface-container-high": "#2d2a21",
-                        "surface-dim": "#16130b",
-                        "on-primary-fixed": "#241a00",
-                        "surface-container": "#231f17",
-                        "on-secondary-fixed-variant": "#7a3000",
-                        "on-tertiary-fixed": "#00174b",
-                        "error-container": "#93000a",
-                        "on-primary-container": "#554300",
-                        "secondary-container": "#fe6b00",
-                        "on-error": "#690005",
-                        "primary-fixed-dim": "#e9c349",
-                        "surface-container-highest": "#38342b",
-                        "on-tertiary": "#082b72",
-                        "surface-tint": "#e9c349",
-                        "secondary-fixed-dim": "#ffb693",
-                        "outline": "#99907c",
-                        "primary-container": "#d4af37",
-                        "outline-variant": "#4d4635",
-                        "surface-container-lowest": "#110e07",
-                        "on-tertiary-fixed-variant": "#27438a",
-                        "surface-bright": "#3d392f",
-                        "on-surface": "#eae1d4",
-                        "surface": "#16130b",
-                        "secondary": "#ffb693",
-                        "tertiary-fixed": "#dbe1ff",
-                        "tertiary-fixed-dim": "#b4c5ff",
-                        "on-primary-fixed-variant": "#574500",
-                        "tertiary": "#bfcdff",
-                        "tertiary-container": "#97b0ff",
-                        "on-secondary-fixed": "#351000",
-                        "inverse-primary": "#735c00",
-                        "primary": "#f2ca50",
-                        "on-surface-variant": "#d0c5af",
-                        "error": "#ffb4ab",
-                        "inverse-on-surface": "#343027",
-                        "inverse-surface": "#eae1d4",
-                        "on-error-container": "#ffdad6",
-                        "surface-variant": "#38342b",
-                        "on-tertiary-container": "#254188",
-                        "background": "#16130b",
-                        "on-secondary": "#561f00"
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>FitLife Premium | Đẳng Cấp Thể Hình</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            bgMain: "#0A0A0A",
+                            bgSub: "#141414",
+                            premiumGold: "#D4AF37",
+                            accentOrange: "#FF6B00",
+                            textWhite: "#FFFFFF",
+                            textGray: "#B5B5B5",
+                            borderGray: "#333333",
+                        },
+                        fontFamily: {
+                            poppins: ["Poppins", "sans-serif"],
+                            inter: ["Inter", "sans-serif"],
+                        },
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "lg": "48px",
-                        "xs": "4px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "md": "24px",
-                        "xl": "80px",
-                        "container-max": "1280px",
-                        "sm": "12px"
-                    },
-                    "fontFamily": {
-                        "label-sm": ["Inter"],
-                        "headline-md": ["Montserrat"],
-                        "headline-lg": ["Montserrat"],
-                        "body-md": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "display-lg": ["Montserrat"],
-                        "display-lg-mobile": ["Montserrat"],
-                        "body-lg": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-bold": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
-                    }
-                }
+                },
+            };
+        </script>
+        <style>
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition:
+                    opacity 0.8s ease-out,
+                    transform 0.8s ease-out;
             }
-        }
-    </script>
-    <style>
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .slide-up {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 1s ease-out;
+            }
+            .slide-up.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            .premium-text-gradient {
+                background: linear-gradient(to right, #d4af37, #ff6b00);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
 
-        .premium-card {
-            background-color: #1C1C1C;
-            border-top: 2px solid #D4AF37;
-        }
+            .hover-lift {
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.3);
+            }
+        </style>
+    </head>
+    <body class="bg-bgMain text-textGray font-inter antialiased overflow-x-hidden selection:bg-premiumGold selection:text-bgMain">
+        <!-- Header -->
+        <nav id="header" class="fixed top-0 w-full z-50 bg-bgMain/80 backdrop-blur-md border-b border-borderGray transition-all duration-300">
+            <div class="w-full px-6 h-20 flex justify-between items-center">
+                <a href="index.html" class="font-poppins text-3xl text-textWhite tracking-tighter">FIT<span class="text-premiumGold">LIFE</span></a>
 
-        .btn-primary {
-            background-color: #FF6B00;
-            color: #FFFFFF;
-        }
+                <div class="hidden md:flex gap-8 items-center">
+                    <a
+                        href="index.html"
+                        class="text-premiumGold font-semibold border-b-2 border-premiumGold pb-1 uppercase tracking-widest text-sm hover:text-premiumGold transition-colors"
+                        >Trang Chủ</a
+                    >
+                    <a
+                        href="classes.html"
+                        class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+                        >Lớp Học</a
+                    >
+                    <a
+                        href="contact.html"
+                        class="text-textWhite hover:text-premiumGold transition-colors uppercase tracking-widest text-sm font-medium"
+                        >Liên Hệ</a
+                    >
+                    <a
+                        href="contact.html"
+                        class="bg-premiumGold text-bgMain px-6 py-2 rounded font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors"
+                        >Đăng Ký Ngay</a
+                    >
+                </div>
 
-        .btn-secondary {
-            border: 1px solid #D4AF37;
-            color: #D4AF37;
-        }
-    </style>
-</head>
-
-<body
-    class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation (Desktop) -->
-    <nav class="hidden md:block fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-surface/90 shadow-sm border-b border-outline-variant/30 transition-all duration-300">
-        <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-            <a class="font-display-lg text-primary dark:text-primary-fixed italic tracking-tighter text-3xl" href="index.html">
-                FitLife Premium
-            </a>
-            <section class="flex gap-8 items-center">
-                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="index.html">Trang Chủ</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="classes.html">Lớp Học</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300 font-body-md text-body-md uppercase tracking-widest active:scale-95 transition-transform"
-                    href="contact.html">Liên Hệ</a>
-                <a href="contact.html"
-                    class="bg-secondary-container text-on-secondary-container px-6 py-2 rounded font-label-bold text-label-bold uppercase tracking-wider hover:opacity-90 transition-opacity inline-block">
-                    Tham Gia Ngay
-                </a>
-            </section>
-        </div>
-    </nav>
-    <!-- SideNavBar (Mobile) -->
-    <aside
-        class="md:hidden flex flex-col h-full py-8 bg-surface-container-highest dark:bg-surface-container-highest fixed inset-y-0 left-0 w-64 z-[60] shadow-xl">
-        <header class="px-6 mb-8">
-            <h2 class="text-primary font-display-lg-mobile">FitLife Premium</h2>
-            <p class="font-headline-md-mobile text-secondary dark:text-secondary-fixed mt-2">Elite Performance</p>
-        </header>
-        <nav class="flex-1 space-y-2">
-            <a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 p-4 flex items-center gap-4 transition-all duration-200"
-                href="index.html">
-                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-                <span class="font-label-bold">Trang Chủ</span>
-            </a>
-            <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200"
-                href="classes.html">
-                <span class="material-symbols-outlined">fitness_center</span>
-                <span class="font-label-bold">Lớp Học</span>
-            </a>
-            <a class="text-on-surface-variant mx-2 p-4 flex items-center gap-4 hover:bg-surface-container-high transition-all duration-200"
-                href="contact.html">
-                <span class="material-symbols-outlined">mail</span>
-                <span class="font-label-bold">Liên Hệ</span>
-            </a>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-textWhite">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
         </nav>
-        <footer class="px-6 mt-auto">
-            <a href="contact.html" class="block text-center w-full btn-primary py-3 rounded font-label-bold">Tham Gia Ngay</a>
-        </footer>
-    </aside>
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center pt-20 md:pt-0">
-        <figure class="absolute inset-0 z-0 m-0">
-            <div class="bg-cover bg-center w-full h-full"
-                data-alt="A cinematic, wide-angle shot of an ultra-luxury, high-end fitness facility."
-                style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop')">
-            </div>
-            <div
-                class="absolute inset-0 bg-background/80 md:bg-background/60 bg-gradient-to-t from-background via-background/50 to-transparent">
-            </div>
-        </figure>
-        <article class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20 md:mt-0 fade-in">
-            <h1 class="font-display-lg-mobile md:font-display-lg text-on-surface mb-6 uppercase tracking-tighter">
-                Biến Đổi Cơ Thể, <br /><span class="text-primary-container">Nâng Tầm Cuộc Sống</span>
-            </h1>
-            <p class="font-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
-                Trải nghiệm tập luyện đẳng cấp thế giới, trang thiết bị hiện đại và đội ngũ huấn luyện viên chuyên
-                nghiệp giúp bạn đạt được mọi mục tiêu hình thể.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html"
-                    class="bg-secondary-container text-on-secondary-container inline-block px-8 py-4 rounded font-label-bold tracking-widest uppercase hover:opacity-90 transition-opacity">Tham
-                    Gia Ngay</a>
-                <a href="classes.html"
-                    class="btn-secondary inline-block px-8 py-4 rounded font-label-bold tracking-widest uppercase hover:bg-primary-container/10 transition-colors">Khám
-                    Phá Lớp Học</a>
-            </div>
-        </article>
-    </section>
-    <!-- About Section -->
-    <section class="py-xl px-gutter max-w-container-max mx-auto" id="about">
-        <div class="grid md:grid-cols-2 gap-xl items-center">
-            <div class="fade-in">
-                <h2 class="font-headline-lg text-on-surface mb-6 uppercase tracking-tight">Đỉnh Cao Của <span
-                        class="text-primary-container">Sự Độc Bản</span></h2>
-                <p class="text-on-surface-variant font-body-md mb-8 leading-relaxed">
-                    FitLife Premium đại diện cho sự thay đổi mô hình trong rèn luyện thể chất. Chúng tôi cung cấp một
-                    môi trường nơi hiệu suất ưu tú đáp ứng sự sang trọng không thỏa hiệp. Cơ sở của chúng tôi được thiết
-                    kế cho những người đòi hỏi điều tốt nhất tuyệt đối từ bản thân và môi trường xung quanh.
-                </p>
-                <dl class="grid grid-cols-2 gap-8">
-                    <div class="flex flex-col">
-                        <dd class="font-headline-lg text-secondary-container m-0">5000+</dd>
-                        <dt class="font-label-sm text-on-surface-variant uppercase tracking-wider mt-1 order-last">Hội Viên</dt>
-                    </div>
-                    <div class="flex flex-col">
-                        <dd class="font-headline-lg text-secondary-container m-0">50+</dd>
-                        <dt class="font-label-sm text-on-surface-variant uppercase tracking-wider mt-1 order-last">Huấn Luyện Viên
-                        </dt>
-                    </div>
-                    <div class="flex flex-col">
-                        <dd class="font-headline-lg text-secondary-container m-0">20+</dd>
-                        <dt class="font-label-sm text-on-surface-variant uppercase tracking-wider mt-1 order-last">Chương Trình
-                            Tập Luyện</dt>
-                    </div>
-                    <div class="flex flex-col">
-                        <dd class="font-headline-lg text-secondary-container m-0">10</dd>
-                        <dt class="font-label-sm text-on-surface-variant uppercase tracking-wider mt-1 order-last">Năm Kinh Nghiệm
-                        </dt>
-                    </div>
-                </dl>
-            </div>
-            <div class="relative fade-in">
-                <div
-                    class="aspect-square md:aspect-[4/5] rounded border border-outline-variant/30 overflow-hidden relative">
-                    <img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
-                        data-alt="A focused, muscular athlete lifting heavy matte-black dumbbells in a darkly lit, premium gym environment."
-                        src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop" />
-                    <div class="absolute inset-0 bg-gradient-to-tr from-background/80 via-transparent to-transparent">
-                    </div>
+
+        <!-- Mobile Menu Overlay -->
+        <nav
+            id="mobile-menu"
+            class="fixed inset-0 bg-bgMain z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 md:hidden"
+        >
+            <a href="index.html" class="text-premiumGold text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4">Trang Chủ</a>
+            <a href="classes.html" class="text-textWhite text-2xl font-poppins uppercase mb-6 border-b border-borderGray pb-4">Lớp Học</a>
+            <a href="contact.html" class="text-textWhite text-2xl font-poppins uppercase mb-8 border-b border-borderGray pb-4">Liên Hệ</a>
+            <a href="contact.html" class="bg-premiumGold text-bgMain text-center py-4 rounded font-bold uppercase tracking-widest">Đăng Ký Tập Thử</a>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <header class="relative h-screen flex items-center justify-center pt-20">
+                <div class="absolute inset-0 z-0">
+                    <img
+                        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop"
+                        class="w-full h-full object-cover"
+                        alt="Premium Gym"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-bgMain via-bgMain/80 to-bgMain/30"></div>
                 </div>
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 border-l-2 border-b-2 border-primary-container/50">
-                </div>
-                <div class="absolute -top-6 -right-6 w-32 h-32 border-r-2 border-t-2 border-primary-container/50"></div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Grid (Bento Style) -->
-    <section class="py-xl bg-surface-container-lowest" id="classes">
-        <div class="max-w-container-max mx-auto px-gutter">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="font-headline-lg text-on-surface uppercase tracking-tight mb-4">Bộ Môn <span
-                        class="text-primary-container">Đẳng Cấp</span></h2>
-                <p class="text-on-surface-variant font-body-md max-w-xl mx-auto">Hoàn thiện kỹ năng của bạn qua các khu
-                    vực chuyên biệt được thiết kế cho hiệu suất tối đa tuyệt đối.</p>
-            </div>
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
-                <!-- Personal Training (Large) -->
-                <article
-                    class="premium-card rounded-lg p-6 flex flex-col justify-between md:col-span-2 fade-in group relative overflow-hidden">
-                    <figure class="absolute inset-0 bg-gradient-to-br from-surface-container-high/50 to-transparent z-0 m-0">
-                    </figure>
-                    <header class="relative z-10 flex justify-between items-start">
-                        <span class="material-symbols-outlined text-primary-container text-4xl"
-                            style="font-variation-settings: 'FILL' 1;">psychology</span>
-                        <span
-                            class="font-label-sm px-3 py-1 bg-secondary-container/15 text-secondary-container rounded uppercase tracking-wider">Cao
-                            Cấp</span>
-                    </header>
-                    <div class="relative z-10">
-                        <h3 class="font-headline-md text-on-surface mb-2">Huấn Luyện Cá Nhân</h3>
-                        <p class="text-on-surface-variant font-body-sm line-clamp-2">Huấn luyện 1 kèm 1 được thiết kế
-                            riêng để phá vỡ giới hạn của bạn.</p>
-                    </div>
-                </article>
-                <!-- Strength -->
-                <article
-                    class="bg-surface-container p-6 rounded-lg border border-outline-variant/30 flex flex-col justify-between fade-in hover:border-primary-container/50 transition-colors">
+
+                <div class="relative z-10 text-center px-6 max-w-5xl mx-auto slide-up">
                     <span
-                        class="material-symbols-outlined text-on-surface-variant text-4xl group-hover:text-primary-container transition-colors">fitness_center</span>
-                    <div>
-                        <h3 class="font-headline-md text-on-surface mb-2 text-lg">Khu Vực Sức Mạnh</h3>
-                        <p class="text-on-surface-variant text-sm line-clamp-2">Tạ tự do và máy tập kháng lực tiên tiến.
+                        class="inline-block px-4 py-1 border border-premiumGold text-premiumGold font-bold tracking-widest uppercase text-xs rounded-full mb-6"
+                        >Phòng Tập Cao Cấp</span
+                    >
+                    <h1 class="font-poppins text-5xl md:text-7xl text-textWhite mb-6 leading-tight uppercase">
+                        Biến Đổi Cơ Thể <br />
+                        <span class="premium-text-gradient">Nâng Tầm Cuộc Sống</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-textGray mb-10 max-w-3xl mx-auto">
+                        Trải nghiệm không gian tập luyện hiện đại với trang thiết bị cao cấp, huấn luyện viên chuyên nghiệp và chương trình luyện tập
+                        cá nhân hóa.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                        <a
+                            href="contact.html"
+                            class="bg-accentOrange text-textWhite px-8 py-4 rounded font-bold uppercase tracking-widest hover:bg-premiumGold transition-colors text-sm"
+                            >Đăng Ký Tập Thử</a
+                        >
+                        <a
+                            href="classes.html"
+                            class="border border-textWhite text-textWhite px-8 py-4 rounded font-bold uppercase tracking-widest hover:bg-textWhite hover:text-bgMain transition-colors text-sm"
+                            >Xem Lớp Học</a
+                        >
+                    </div>
+
+                    <ul class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-borderGray pt-8">
+                        <li>
+                            <div class="font-poppins text-3xl text-premiumGold mb-1">5000+</div>
+                            <div class="text-xs uppercase tracking-widest font-semibold">Hội Viên</div>
+                        </li>
+                        <li>
+                            <div class="font-poppins text-3xl text-premiumGold mb-1">50+</div>
+                            <div class="text-xs uppercase tracking-widest font-semibold">Huấn Luyện Viên</div>
+                        </li>
+                        <li>
+                            <div class="font-poppins text-3xl text-premiumGold mb-1">20+</div>
+                            <div class="text-xs uppercase tracking-widest font-semibold">Chương Trình Tập</div>
+                        </li>
+                        <li>
+                            <div class="font-poppins text-3xl text-premiumGold mb-1">10+</div>
+                            <div class="text-xs uppercase tracking-widest font-semibold">Năm Kinh Nghiệm</div>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Giới Thiệu -->
+            <section class="py-24 bg-bgSub">
+                <div class="w-full px-6 grid md:grid-cols-2 gap-16 items-center">
+                    <div class="fade-in">
+                        <h2 class="font-poppins text-4xl text-textWhite mb-6 uppercase">
+                            Tiêu Chuẩn <span class="text-premiumGold">Vàng</span> Trong Thể Hình
+                        </h2>
+                        <p class="mb-8 leading-relaxed">
+                            FitLife Premium không chỉ là một phòng tập, mà là một cộng đồng của những người luôn theo đuổi sự hoàn hảo. Chúng tôi cam
+                            kết mang lại trải nghiệm tập luyện đẳng cấp nhất với trang thiết bị tối tân nhập khẩu trực tiếp từ Châu Âu, không gian
+                            luyện tập riêng tư, sang trọng và đội ngũ huấn luyện viên giàu kinh nghiệm nhất.
                         </p>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-premiumGold">check_circle</span>
+                                <span class="text-textWhite">Thiết bị nhập khẩu hiện đại</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-premiumGold">check_circle</span>
+                                <span class="text-textWhite">Huấn luyện viên giàu kinh nghiệm</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-premiumGold">check_circle</span>
+                                <span class="text-textWhite">Không gian sang trọng</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-premiumGold">check_circle</span>
+                                <span class="text-textWhite">Chương trình tập cá nhân hóa</span>
+                            </li>
+                        </ul>
+                        <a
+                            href="#services"
+                            class="text-premiumGold font-bold uppercase tracking-widest text-sm flex items-center gap-2 hover:text-accentOrange transition-colors"
+                        >
+                            Tìm Hiểu Thêm
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
                     </div>
-                </article>
-                <!-- Cardio -->
-                <article
-                    class="bg-surface-container p-6 rounded-lg border border-outline-variant/30 flex flex-col justify-between fade-in hover:border-primary-container/50 transition-colors">
-                    <span class="material-symbols-outlined text-on-surface-variant text-4xl">monitor_heart</span>
-                    <div>
-                        <h3 class="font-headline-md text-on-surface mb-2 text-lg">Khu Vực Cardio</h3>
-                        <p class="text-on-surface-variant text-sm line-clamp-2">Thiết bị tập luyện chiến thuật sức bền
-                            cao.</p>
+                    <div class="relative fade-in">
+                        <img
+                            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop"
+                            class="w-full h-[500px] object-cover rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+                            alt="Gym Interior"
+                        />
+                        <div class="absolute -bottom-6 -left-6 w-32 h-32 border-l-4 border-b-4 border-premiumGold"></div>
+                        <div class="absolute -top-6 -right-6 w-32 h-32 border-r-4 border-t-4 border-accentOrange"></div>
                     </div>
-                </article>
-                <!-- Group Classes (Large) -->
-                <article
-                    class="premium-card rounded-lg p-6 flex flex-col justify-between md:col-span-2 fade-in group relative overflow-hidden">
-                    <header class="relative z-10 flex justify-between items-start">
-                        <span class="material-symbols-outlined text-primary-container text-4xl"
-                            style="font-variation-settings: 'FILL' 1;">groups</span>
-                        <span
-                            class="font-label-sm px-3 py-1 bg-primary-container/15 text-primary-container rounded uppercase tracking-wider">Năng
-                            Lượng Cao</span>
-                    </header>
-                    <div class="relative z-10">
-                        <h3 class="font-headline-md text-on-surface mb-2">Tập Luyện Nhóm</h3>
-                        <p class="text-on-surface-variant font-body-sm line-clamp-2">Các phiên tập luyện điều kiện trao
-                            đổi chất chuyên sâu, thúc đẩy bởi cộng đồng.</p>
-                    </div>
-                </article>
+                </div>
             </section>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest relative w-full pt-xl pb-md border-t border-outline-variant/20">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-gutter max-w-container-max mx-auto mb-12">
-            <div class="md:col-span-1">
-                <a href="index.html" class="font-display-lg text-primary mb-4 block text-2xl italic tracking-tighter">FitLife
-                    Premium</a>
-                <p class="text-on-surface-variant font-body-sm mb-4">Tập luyện hiệu suất cao cấp cho những người yêu cầu
-                    sự hoàn hảo.</p>
+
+            <!-- Dịch Vụ Nổi Bật -->
+            <section id="services" class="py-24 bg-bgMain">
+                <div class="w-full px-6">
+                    <div class="text-center mb-16 fade-in">
+                        <span class="text-accentOrange font-bold tracking-widest uppercase text-xs mb-2 block">Lựa Chọn Của Giới Tinh Hoa</span>
+                        <h2 class="font-poppins text-4xl text-textWhite uppercase">Dịch Vụ <span class="text-premiumGold">Nổi Bật</span></h2>
+                    </div>
+
+                    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service 1 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">psychology</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Huấn Luyện Cá Nhân</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Thiết kế lộ trình riêng biệt 1-kèm-1, theo sát từng bước tiến để đảm bảo bạn đạt được mục tiêu thể hình nhanh nhất
+                                    và an toàn nhất.
+                                </p>
+                            </article>
+                        </li>
+                        <!-- Service 2 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">monitor_heart</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Khu Cardio</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Hệ thống máy chạy bộ, đạp xe và elliptical tối tân có màn hình tương tác, giúp đốt mỡ hiệu quả trong không gian
+                                    năng động.
+                                </p>
+                            </article>
+                        </li>
+                        <!-- Service 3 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">fitness_center</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Tập Sức Mạnh</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Khu vực tạ tự do rộng rãi với thiết bị đa dạng, đáp ứng mọi nhu cầu tăng cơ và phát triển sức mạnh bứt phá của
+                                    bạn.
+                                </p>
+                            </article>
+                        </li>
+                        <!-- Service 4 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">self_improvement</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Yoga</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Studio chuyên biệt tĩnh lặng, cân bằng thân tâm trí với các huấn luyện viên Yoga chuẩn quốc tế, giúp phục hồi và
+                                    tăng độ dẻo dai.
+                                </p>
+                            </article>
+                        </li>
+                        <!-- Service 5 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">groups</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Lớp Nhóm</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Các lớp học bản quyền sôi động như Zumba, BodyPump, HIIT với âm nhạc cuồng nhiệt giúp đốt cháy calo cực kỳ hiệu
+                                    quả.
+                                </p>
+                            </article>
+                        </li>
+                        <!-- Service 6 -->
+                        <li>
+                            <article class="bg-bgSub p-8 border border-borderGray rounded hover-lift fade-in group h-full">
+                                <span
+                                    class="w-16 h-16 bg-bgMain border border-premiumGold/30 flex items-center justify-center rounded-full mb-6 group-hover:bg-premiumGold transition-colors"
+                                >
+                                    <span class="material-symbols-outlined text-3xl text-premiumGold group-hover:text-bgMain">restaurant_menu</span>
+                                </span>
+                                <h3 class="font-poppins text-xl text-textWhite mb-3">Tư Vấn Dinh Dưỡng</h3>
+                                <p class="text-sm line-clamp-3">
+                                    Chuyên gia dinh dưỡng sẽ lên thực đơn phù hợp với thể trạng và chế độ tập luyện, tối ưu hóa quá trình biến đổi cơ
+                                    thể.
+                                </p>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Vì Sao Chọn FitLife -->
+            <section class="py-24 bg-bgSub border-y border-borderGray relative">
+                <div
+                    class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none"
+                    style="background-image: radial-gradient(circle at center, #d4af37 0%, transparent 70%)"
+                ></div>
+                <div class="w-full px-6">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="font-poppins text-4xl text-textWhite uppercase">Vì Sao Chọn <span class="text-premiumGold">FitLife</span></h2>
+                    </div>
+
+                    <ul class="grid md:grid-cols-4 gap-8">
+                        <li class="text-center fade-in hover:-translate-y-2 transition-transform">
+                            <span class="material-symbols-outlined text-5xl text-accentOrange mb-4 block">star</span>
+                            <h3 class="font-poppins text-lg text-textWhite mb-2">Thiết Bị Cao Cấp</h3>
+                            <p class="text-sm">100% nhập khẩu từ Technogym và LifeFitness.</p>
+                        </li>
+                        <li class="text-center fade-in hover:-translate-y-2 transition-transform" style="transition-delay: 100ms">
+                            <span class="material-symbols-outlined text-5xl text-accentOrange mb-4 block">sports_martial_arts</span>
+                            <h3 class="font-poppins text-lg text-textWhite mb-2">HLV Chuyên Nghiệp</h3>
+                            <p class="text-sm">Đội ngũ có chứng chỉ quốc tế NASM, ACE.</p>
+                        </li>
+                        <li class="text-center fade-in hover:-translate-y-2 transition-transform" style="transition-delay: 200ms">
+                            <span class="material-symbols-outlined text-5xl text-accentOrange mb-4 block">schedule</span>
+                            <h3 class="font-poppins text-lg text-textWhite mb-2">Lịch Tập Linh Hoạt</h3>
+                            <p class="text-sm">Hơn 50+ lớp học nhóm mỗi tuần, đa dạng khung giờ.</p>
+                        </li>
+                        <li class="text-center fade-in hover:-translate-y-2 transition-transform" style="transition-delay: 300ms">
+                            <span class="material-symbols-outlined text-5xl text-accentOrange mb-4 block">diamond</span>
+                            <h3 class="font-poppins text-lg text-textWhite mb-2">Cơ Sở Sang Trọng</h3>
+                            <p class="text-sm">Phòng xông hơi, locker VIP và sảnh chờ 5 sao.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Đánh Giá Khách Hàng -->
+            <section class="py-24 bg-bgMain">
+                <div class="w-full px-6">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="font-poppins text-4xl text-textWhite uppercase">Câu Chuyện <span class="text-premiumGold">Thành Công</span></h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Testimonial 1 -->
+                        <article class="bg-bgSub p-8 border border-borderGray rounded fade-in hover-lift">
+                            <div class="flex gap-1 text-premiumGold mb-6">
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                            </div>
+                            <blockquote class="italic mb-6 leading-relaxed">
+                                "Cơ sở vật chất ở đây thực sự vượt mong đợi. Không gian tập luyện vô cùng chuyên nghiệp và riêng tư. Tôi đã giảm được
+                                8kg sau 2 tháng nhờ sự hướng dẫn tận tâm của PT."
+                            </blockquote>
+                            <figure class="flex items-center gap-4 m-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop"
+                                    class="w-12 h-12 rounded-full object-cover"
+                                    alt="Avatar 1"
+                                />
+                                <figcaption>
+                                    <cite class="font-bold text-textWhite not-italic block">Nguyễn Hoàng Lan</cite>
+                                    <span class="text-xs uppercase tracking-wider text-premiumGold">Doanh nhân</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <!-- Testimonial 2 -->
+                        <article class="bg-bgSub p-8 border border-borderGray rounded fade-in hover-lift" style="transition-delay: 100ms">
+                            <div class="flex gap-1 text-premiumGold mb-6">
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                            </div>
+                            <blockquote class="italic mb-6 leading-relaxed">
+                                "Tôi rất ấn tượng với lớp Yoga tại FitLife. Giảng viên hướng dẫn cực kỳ chi tiết, phòng tập tĩnh lặng, giúp tôi hoàn
+                                toàn thư giãn sau những giờ làm việc căng thẳng."
+                            </blockquote>
+                            <figure class="flex items-center gap-4 m-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                                    class="w-12 h-12 rounded-full object-cover"
+                                    alt="Avatar 2"
+                                />
+                                <figcaption>
+                                    <cite class="font-bold text-textWhite not-italic block">Trần Tuấn Minh</cite>
+                                    <span class="text-xs uppercase tracking-wider text-premiumGold">Kỹ sư IT</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                        <!-- Testimonial 3 -->
+                        <article class="bg-bgSub p-8 border border-borderGray rounded fade-in hover-lift" style="transition-delay: 200ms">
+                            <div class="flex gap-1 text-premiumGold mb-6">
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                                <span class="material-symbols-outlined text-xl" style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                            </div>
+                            <blockquote class="italic mb-6 leading-relaxed">
+                                "Máy móc luôn được bảo trì mới, tạ đầy đủ và sắp xếp gọn gàng. Đặc biệt khu vực xông hơi sau khi tập thật tuyệt vời.
+                                Xứng đáng với chuẩn mực phòng tập 5 sao."
+                            </blockquote>
+                            <figure class="flex items-center gap-4 m-0">
+                                <img
+                                    src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop"
+                                    class="w-12 h-12 rounded-full object-cover"
+                                    alt="Avatar 3"
+                                />
+                                <figcaption>
+                                    <cite class="font-bold text-textWhite not-italic block">Lê Phương Thảo</cite>
+                                    <span class="text-xs uppercase tracking-wider text-premiumGold">Giám đốc Marketing</span>
+                                </figcaption>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Banner CTA -->
+            <section class="py-32 relative overflow-hidden bg-bgSub border-y border-premiumGold/30">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop')] bg-cover bg-fixed opacity-10 mix-blend-luminosity"
+                ></div>
+                <div class="relative z-10 max-w-4xl mx-auto px-6 text-center fade-in">
+                    <h2 class="font-poppins text-4xl md:text-5xl text-textWhite mb-8 uppercase leading-tight">
+                        Sẵn Sàng Trở Thành
+                        <span class="premium-text-gradient block mt-2">Phiên Bản Tốt Nhất Của Chính Bạn?</span>
+                    </h2>
+                    <p class="text-lg mb-10 text-textGray">Bắt đầu hành trình biến đổi cùng FitLife Premium ngay hôm nay.</p>
+                    <a
+                        href="contact.html"
+                        class="bg-premiumGold text-bgMain px-10 py-5 rounded font-bold uppercase tracking-widest hover:bg-white transition-colors text-lg inline-block hover:-translate-y-1 transform duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                        >Đăng Ký Tập Thử Miễn Phí</a
+                    >
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-bgMain pt-20 pb-10">
+            <div class="w-full px-6 grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-1">
+                    <a href="index.html" class="font-poppins text-2xl text-textWhite tracking-tighter block mb-6"
+                        >FIT<span class="text-premiumGold">LIFE</span></a
+                    >
+                    <p class="text-sm leading-relaxed mb-6">
+                        Tập luyện hiệu suất cao cấp cho những người yêu cầu sự hoàn hảo. Nâng tầm thể hình thành nghệ thuật.
+                    </p>
+                    <div class="flex gap-4">
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >FB</a
+                        >
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >IG</a
+                        >
+                        <a
+                            href="#"
+                            class="w-10 h-10 rounded bg-bgSub border border-borderGray flex items-center justify-center text-textWhite hover:bg-premiumGold hover:text-bgMain transition-colors"
+                            >YT</a
+                        >
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Liên Kết Nhanh</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="index.html" class="text-sm hover:text-premiumGold transition-colors">Trang Chủ</a>
+                        </li>
+                        <li>
+                            <a href="classes.html" class="text-sm hover:text-premiumGold transition-colors">Lớp Học</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-sm hover:text-premiumGold transition-colors">Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Dịch Vụ</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Huấn Luyện Cá Nhân</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Tập Luyện Nhóm</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm hover:text-premiumGold transition-colors">Thẻ Hội Viên VIP</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-textWhite uppercase tracking-widest mb-6">Liên Hệ</h4>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 items-start">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">location_on</span>
+                            <span class="text-sm">123 Đại Lộ Elite, Quận 1<br />TP. Hồ Chí Minh</span>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">phone</span>
+                            <span class="text-sm">0909 123 456</span>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <span class="material-symbols-outlined text-premiumGold text-xl">mail</span>
+                            <span class="text-sm">contact@fitlifepremium.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Điều Hướng</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="index.html">Trang
-                            Chủ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="classes.html">Lớp Học</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="contact.html">Liên Hệ</a></li>
-                </ul>
+
+            <div class="w-full px-6 pt-8 border-t border-borderGray text-center">
+                <p class="text-sm">&copy; 2026 FitLife Premium. Đã đăng ký bản quyền.</p>
             </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Pháp Lý</h4>
-                <ul class="space-y-2">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Chính Sách Bảo Mật</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Điều Khoản Dịch Vụ</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md"
-                            href="#">Hỏi Đáp</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-label-bold text-on-surface mb-4 uppercase tracking-wider">Liên Hệ</h4>
-                <p class="text-on-surface-variant font-body-sm mb-4">123 Đại Lộ Elite, Quận 1, TP. Hồ Chí Minh</p>
-                <p class="text-on-surface-variant font-body-sm">contact@fitlifepremium.com</p>
-            </div>
-        </div>
-        <div class="border-t border-outline-variant/20 pt-6 text-center">
-            <p class="text-on-surface-variant font-body-sm">© 2024 FitLife Premium. Bảo lưu mọi quyền.</p>
-        </div>
-    </footer>
-    <script>
-        // Simple scroll observer for fade-in animations
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+        </footer>
+
+        <script>
+            // Scroll animations
+            document.addEventListener("DOMContentLoaded", () => {
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                            }
+                        });
+                    },
+                    { threshold: 0.1 },
+                );
+
+                document.querySelectorAll(".fade-in, .slide-up").forEach((element) => {
+                    observer.observe(element);
+                });
+
+                // Header scroll effect
+                const header = document.getElementById("header");
+                window.addEventListener("scroll", () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add("shadow-lg", "border-premiumGold/20");
+                        header.classList.remove("border-borderGray");
+                    } else {
+                        header.classList.remove("shadow-lg", "border-premiumGold/20");
+                        header.classList.add("border-borderGray");
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
 
-            document.querySelectorAll('.fade-in').forEach((element) => {
-                observer.observe(element);
-            });
-        });
-    </script>
-</body>
+                // Mobile menu toggle
+                const menuBtn = document.querySelector("button.md\\:hidden");
+                const mobileMenu = document.getElementById("mobile-menu");
+                let isMenuOpen = false;
 
+                menuBtn.addEventListener("click", () => {
+                    isMenuOpen = !isMenuOpen;
+                    if (isMenuOpen) {
+                        mobileMenu.classList.remove("translate-x-full");
+                        menuBtn.innerHTML = '<span class="material-symbols-outlined text-3xl">close</span>';
+                    } else {
+                        mobileMenu.classList.add("translate-x-full");
+                        menuBtn.innerHTML = '<span class="material-symbols-outlined text-3xl">menu</span>';
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
