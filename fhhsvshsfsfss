@@ -1,0 +1,45 @@
+*   [33mce79f66[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Giai quyet conflict bai 10
+[31m|[m[32m\[m  
+[31m|[m * [33m02a6faa[m[33m ([m[1;32mfeature/fix-bug[m[33m)[m Sua tren nhanh phu
+* [32m|[m [33m57415e5[m Sua tren nhanh main
+[32m|[m[32m/[m  
+* [33m555d755[m Tao file main.txt
+* [33m079370a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m update
+*   [33ma4912f5[m Giai quyet conflict thanh cong
+[33m|[m[34m\[m  
+[33m|[m * [33mc3e54c2[m[33m ([m[1;32mfeature/conflict-test[m[33m)[m Sua file index tren nhanh phu
+* [34m|[m [33m2f00532[m Sua file index.txt tren main
+[34m|[m[34m/[m  
+* [33ma085988[m Tao file index,txt o P1.9
+* [33mc25da03[m update
+* [33m5687704[m[33m ([m[1;32mfeature/contact[m[33m)[m Add contact feature in P1.8
+* [33m5ee0e3b[m Update P1.5 and P1.7
+* [33m1f9ed0e[m Update P1 exercises
+* [33m9058a6c[m add
+* [33m05027ae[m Add P1.4
+* [33m31c2158[m Manage file lifecycle
+* [33m9de11ea[m Add README
+* [33m9e35d23[m Add Module02 P1.2 folder
+* [33m50d4b6e[m update
+* [33m9c8e9a4[m update
+* [33m123c404[m update
+* [33maf158f2[m update
+* [33m31b40b7[m update
+* [33m32942eb[m update
+* [33m303fa4c[m update
+* [33mda61e9d[m update
+* [33m965ffe3[m update
+* [33m0ca9d8c[m update
+* [33m150f3ad[m update
+* [33mcc84401[m Update p2.5.html
+* [33m3f1bb3e[m update
+* [33m056c6e3[m update
+* [33ma63b052[m update
+* [33m1783ff9[m update
+* [33m9fbf989[m update
+* [33md8fa8ff[m update
+*   [33m8e008a3[m Resolve README merge conflict
+[35m|[m[36m\[m  
+[35m|[m * [33ma697213[m Update README.md
+[35m|[m * [33m36d0927[m Initial commit
+* [33m687ec87[m Initial project structure
