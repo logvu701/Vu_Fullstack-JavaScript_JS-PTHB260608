@@ -1,0 +1,12 @@
+{
+  "name": "p7-typescript-exercises",
+  "version": "1.0.0",
+  "description": "TypeScript exercises P7.5 - P7.10",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

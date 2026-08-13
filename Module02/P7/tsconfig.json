@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist"
+  },
+  "include": ["P7.5/**/*", "P7.6/**/*", "P7.7/**/*", "P7.8/**/*", "P7.9/**/*", "P7.10/**/*"]
+}
