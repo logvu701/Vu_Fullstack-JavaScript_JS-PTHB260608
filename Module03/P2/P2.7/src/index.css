@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  /* Color definitions */
+  --bg-primary: #0b0f19;
+  --bg-secondary: #161d30;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #242f4c;
+  
+  --accent-primary: #8b5cf6;
+  --accent-hover: #7c3aed;
+  
+  --quiz-accent: #3b82f6;
+  --quiz-accent-hover: #2563eb;
+  --quiz-bg-light: rgba(59, 130, 246, 0.08);
+  
+  --sale-accent: #ef4444;
+  --sale-accent-hover: #dc2626;
+  --sale-bg-light: rgba(239, 68, 68, 0.08);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(22, 29, 48, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-logo {
+  font-size: 1.8rem;
+}
+
+.header-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a78bfa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex: 1;
+}
+
+.tech-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a78bfa;
+  background-color: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+/* Layout */
+.main-layout {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Card Section */
+.timer-section {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.quiz-section::before {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.sale-section::before {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.status-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.status-tag.running {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-tag.paused {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.sale-live-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #ef4444;
+  color: white;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  animation: pulse 1.5s infinite;
+}
+
+.sale-expired-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #475569;
+  color: #cbd5e1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* Timer Display */
+.timer-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.digit-segment {
+  font-size: 4rem;
+  font-weight: 800;
+  font-family: monospace;
+  letter-spacing: 0.05em;
+}
+
+.quiz-section .digit-segment {
+  color: #60a5fa;
+  text-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+}
+
+.sale-section .digit-segment {
+  color: #f87171;
+  text-shadow: 0 0 15px rgba(248, 113, 113, 0.3);
+}
+
+.digit-separator {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin: 0 0.5rem;
+  animation: blink 1s infinite steps(1, start);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.digit-unit {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-left: 1rem;
+  font-weight: 500;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-start {
+  background-color: var(--quiz-accent);
+  color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+  background-color: var(--quiz-accent-hover);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-pause {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn-pause:hover {
+  background-color: #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.btn-reset {
+  background-color: #334155;
+  color: #cbd5e1;
+}
+
+.btn-reset:hover {
+  background-color: #475569;
+}
+
+/* Sale modifications */
+.sale-btn.btn-start {
+  background-color: var(--sale-accent);
+}
+.sale-btn.btn-start:hover:not(:disabled) {
+  background-color: var(--sale-accent-hover);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.sale-ended-message {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(239, 68, 68, 0.05);
+  border: 1px dashed rgba(239, 68, 68, 0.25);
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.sale-ended-message h4 {
+  color: #f87171;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sale-ended-message p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.sale-revive-btn {
+  background-color: #ef4444;
+  color: white;
+  width: 100%;
+}
+
+.sale-revive-btn:hover {
+  background-color: #dc2626;
+}
+
+.timer-instruction {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Footer */
+.app-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.app-footer p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
