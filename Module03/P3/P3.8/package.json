@@ -1,5 +1,5 @@
 {
-  "name": "p3-8-complex-state-usereducer",
+  "name": "p3-8-optimistic-updates-tanstack",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
     "react": "^18.3.1",

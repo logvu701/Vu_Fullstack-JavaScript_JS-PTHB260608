@@ -1,51 +1,67 @@
-# Dự án P3.10: [Bài 10 - Xuất sắc] Tối ưu hóa Ma trận Hiệu năng Hệ thống
+﻿# P3.10: [Bài 10 - Xuất sắc] Phát triển Module Quản lý Tồn kho (End-to-End State)
 
-## 1. Mục tiêu Dự án
-- Xử lý các nút thắt cổ chai tính toán khi quản lý và lọc danh sách **5.000 học viên** thông qua cơ chế khóa bộ nhớ đệm `useMemo` và `useCallback`, `React.memo`.
-- Ngăn chặn việc thực thi vòng lặp lặp lại nếu dữ liệu nguồn (dependencies) không bị biến đổi theo chuẩn **Strict Equality (`===`)**.
-- **Xử lý bẫy dữ liệu**: Tích hợp tính năng độc lập nút đánh dấu "Đã kiểm tra" (Audit Status) và Click Counter. Thao tác trên các nút này kích hoạt component re-render nhưng **tuyệt đối KHÔNG kích hoạt tiến trình tính toán lại danh sách 5.000 học viên** (Bypass thành công 100%).
-- Cung cấp Real-time Performance Profiler đo lường thời gian thực thi (ms) và số lần chạy hàm tính toán.
+Dự án hoàn chỉnh triển khai mô hình **End-to-End State Architecture** kết hợp đồng bộ 2 chiều giữa **TanStack Query v5** (Server State, Query Caching & Mutations) và **Zustand** (Client UI State & Drawer Interaction), đi kèm hệ thống kiểm định tính toàn vẹn dữ liệu (Bẫy số âm & Định mức tối đa).
 
-## 2. Cấu trúc Thư mục
-```
+---
+
+## 🎯 Mục tiêu Kỹ thuật
+
+1. **Phân định rõ ràng trách nhiệm State**:
+   - **Server State (TanStack Query)**: Quản lý danh sách tồn kho `['inventory', { search, category }]`, tự động làm mới khi bộ lọc thay đổi, điều phối `useMutation` cập nhật số lượng tồn kho.
+   - **Client UI State (Zustand)**: Quản lý sản phẩm đang chọn (`selectedItem`), trạng thái đóng/mở Drawer (`isSidebarOpen`), bộ lọc tìm kiếm và hàng đợi thông báo Toast (`toasts`).
+
+2. **Quy trình Điều phối Trạng thái 2 chiều (Cross-State Sync)**:
+   - Khi người dùng bấm *"Điều chỉnh"* &rarr; Zustand kích hoạt `openSidebar(item)`.
+   - Người dùng thay đổi số lượng và xác nhận &rarr; TanStack Query gửi Mutation lên Backend.
+   - Khi mutation thành công (`onSuccess`):
+     1. Zustand gọi `closeSidebar()` để đóng Drawer mượt mà.
+     2. TanStack Query gọi `queryClient.invalidateQueries({ queryKey: ['inventory'] })` để làm mới dữ liệu toàn hệ thống.
+     3. Kích hoạt Toast notification thông báo thành công.
+
+3. **Bẫy Dữ liệu & Phòng Vệ Lỗi (Data Traps & Validation)**:
+   - Chặn số lượng âm ($< 0$) ngay tại client và ném lỗi nghiệp vụ tại tầng API.
+   - Chặn vượt định mức tồn kho tối đa ($> 10,000$ cái).
+   - Hỗ trợ nút mô phỏng lỗi Server 500 để kiểm tra xử lý ngoại lệ và hiển thị Toast lỗi mà không làm sập ứng dụng.
+
+---
+
+## 🏗️ Cấu trúc Thư mục
+
+```text
 P3.10/
 ├── src/
+│   ├── api/
+│   │   └── inventoryApi.ts            # Mock API tồn kho với đầy đủ bẫy lỗi & validation
 │   ├── components/
-│   │   ├── Header.tsx                   # Nút chuyển đổi Optimized / Unoptimized Mode
-│   │   ├── PerformanceProfiler.tsx      # Dashboard đo lường thời gian thực thi & số lần tính
-│   │   ├── AuditHeaderPanel.tsx         # Bẫy dữ liệu: Nút độc lập kiểm chứng không recalculate
-│   │   ├── FilterToolbar.tsx            # Memoized Filter controls
-│   │   ├── StudentTable.tsx             # Memoized Table & StudentRow components
-│   │   └── PerformanceReportModal.tsx   # Báo cáo phân tích chuyên sâu về Re-render & Memoization
+│   │   ├── DataFlowDiagramModal.tsx   # Modal sơ đồ điều phối trạng thái 2 chiều
+│   │   ├── EditInventorySidebar.tsx   # Drawer điều chỉnh tồn kho (Zustand + useMutation)
+│   │   ├── Header.tsx                 # Thanh điều hướng và các nút hành động
+│   │   ├── InventoryFilterBar.tsx     # Bộ lọc tìm kiếm và danh mục (Zustand state)
+│   │   ├── InventoryStatsCards.tsx    # Các thẻ chỉ số KPI tổng quan kho hàng
+│   │   ├── InventoryTable.tsx         # Bảng hiển thị tồn kho (TanStack useQuery)
+│   │   └── ToastContainer.tsx         # Hàng đợi thông báo hệ thống
+│   ├── store/
+│   │   └── useInventoryStore.ts       # Zustand Store quản lý toàn bộ Client UI State
 │   ├── types/
-│   │   └── student.ts                   # Types cho học viên, bộ lọc, thống kê
-│   ├── utils/
-│   │   ├── generateStudents.ts          # Tạo dataset 5.000 học viên xác định
-│   │   └── heavyComputation.ts          # Thuật toán tính toán độ lệch chuẩn, lọc và sắp xếp
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
+│   │   └── inventory.ts               # Interface & Type definitions
+│   ├── App.tsx                        # Layout và điều phối tổng thể
+│   ├── index.css                      # Tailwind CSS
+│   └── main.tsx                       # Cấu hình QueryClientProvider
 ├── package.json
-├── tsconfig.json
 └── vite.config.ts
 ```
 
-## 3. Báo cáo Cơ chế Bypass Bộ nhớ Đệm
-1. **useMemo Dependency Array**: `[allStudents, filters.searchQuery, filters.selectedDepartment, filters.minGPA, filters.sortBy]`.
-2. **Khi click nút "Đã kiểm tra"**: Chỉ có state `isAuditedAll` thay đổi. Các dependencies của `useMemo` giữ nguyên giá trị `===`.
-3. **Kết quả**: React bypass hàm tính toán nặng, trả về kết quả trong bộ nhớ đệm ngay tức khắc (0ms), giữ giao diện mượt mà 60fps.
+---
 
-## 4. Cách Cài đặt và Khởi chạy
+## 🚀 Hướng dẫn Cài đặt & Chạy ứng dụng
+
 ```bash
-# 1. Di chuyển vào thư mục dự án
-cd P3.10
-
-# 2. Cài đặt các phụ thuộc
+# 1. Cài đặt dependencies
 npm install
 
-# 3. Khởi chạy môi trường phát triển
+# 2. Khởi động môi trường phát triển (Vite Dev Server)
 npm run dev
 
-# 4. Build kiểm tra TypeScript
+# 3. Build kiểm tra TypeScript & Bundle production
 npm run build
 ```

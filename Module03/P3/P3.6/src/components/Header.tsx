@@ -1,60 +1,71 @@
 import React from 'react';
-import { Compass, BookOpen, Share2, Activity, Sparkles } from 'lucide-react';
+import { DollarSign, Users, BookOpen, Clock, Zap } from 'lucide-react';
 
 interface HeaderProps {
-  onOpenFlow: () => void;
-  onOpenShare: () => void;
-  onOpenDocs: () => void;
+  activeTab: 'revenue' | 'staff';
+  setActiveTab: (tab: 'revenue' | 'staff') => void;
+  onOpenDoc: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenFlow, onOpenShare, onOpenDocs }) => {
+export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab, onOpenDoc }) => {
   return (
-    <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header className="sticky top-0 z-30 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        {/* Brand */}
+        {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-teal-500/20">
-            <Compass className="w-6 h-6" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+            <DollarSign className="w-6 h-6" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-teal-700 to-emerald-600 bg-clip-text text-transparent">
-                Rikkei Course Finder
+              <h1 className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
+                Executive Analytics Hub
               </h1>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200">
-                P3.6 URL State
+              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800">
+                P3.6 StaleTime (5 Mins)
               </span>
             </div>
-            <p className="text-xs text-slate-500 hidden sm:block">
-              Đồng bộ hóa 2 chiều Bộ lọc qua <code>useSearchParams</code>
+            <p className="text-xs text-slate-400 hidden sm:block">
+              Quản lý Vòng đời Cache: StaleTime vs Background Refetch
             </p>
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-2.5">
-          <button
-            onClick={onOpenFlow}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-teal-50 text-teal-700 border border-teal-200 hover:bg-teal-100 transition shadow-sm"
-          >
-            <Activity className="w-4 h-4 text-teal-600" />
-            <span className="hidden sm:inline">Sơ đồ Luồng Sự kiện</span>
-          </button>
+        {/* Tab switcher & Doc button */}
+        <div className="flex items-center gap-3">
+          {/* Tab Navigation */}
+          <nav className="flex items-center gap-1.5 p-1 bg-slate-800 rounded-2xl border border-slate-700 text-xs font-semibold">
+            <button
+              onClick={() => setActiveTab('revenue')}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition ${
+                activeTab === 'revenue'
+                  ? 'bg-emerald-600 text-white shadow'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <DollarSign className="w-3.5 h-3.5" />
+              <span>Doanh Thu (5m Stale)</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('staff')}
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl transition ${
+                activeTab === 'staff'
+                  ? 'bg-teal-600 text-white shadow'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span>Nhân Sự (Staff)</span>
+            </button>
+          </nav>
 
           <button
-            onClick={onOpenShare}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+            onClick={onOpenDoc}
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-slate-800 text-slate-300 hover:text-white transition border border-slate-700"
           >
-            <Share2 className="w-4 h-4 text-emerald-600" />
-            <span className="hidden sm:inline">Chia sẻ Link</span>
-          </button>
-
-          <button
-            onClick={onOpenDocs}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition shadow-sm"
-          >
-            <BookOpen className="w-4 h-4 text-teal-300" />
-            <span>Tài liệu & Bẫy URL</span>
+            <BookOpen className="w-4 h-4 text-emerald-400" />
+            <span className="hidden sm:inline">Vòng đời Cache</span>
           </button>
         </div>
       </div>

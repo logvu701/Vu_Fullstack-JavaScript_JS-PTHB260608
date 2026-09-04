@@ -1,51 +1,65 @@
-# Dự án P3.9: [Bài 9 - Xuất sắc] Kiến trúc Luồng Truy cập Bảo mật (Protected Routes)
+﻿# P3.9: [Bài 9 - Xuất sắc] Kiến trúc Zustand Slices & Vanilla JS (Ngoài React)
 
-## 1. Mục tiêu Dự án
-- Thiết lập cơ chế định tuyến mệnh lệnh (Imperative Routing) và bảo vệ dữ liệu độc quyền của phân hệ "Phòng học ảo" (Virtual Classroom) & Admin Portal.
-- Tự động chặn các truy cập trái phép bằng URL trực tiếp và chuyển hướng người dùng sang trang `/login` kèm lưu vết URL ban đầu qua `state: { from: location }`.
-- Sau khi đăng nhập thành công, sử dụng `useNavigate(from, { replace: true })` để đưa người dùng trở lại đúng trang mục tiêu.
-- **Xử lý bẫy dữ liệu**: Ngăn chặn hiện tượng lặp vòng History Stack khi nhấn nút "Back" trên trình duyệt bằng cách áp dụng thuộc tính `replace: true`.
+Dự án triển khai mô hình **Zustand Slices Pattern** phân tách các mảng trạng thái độc lập (`authSlice`, `uiSlice`), đồng thời tích hợp **Axios Request & Response Interceptors** hoạt động trong môi trường Vanilla JS (ngoài React) bằng phương thức `useBoundStore.getState()`.
 
-## 2. Cấu trúc Thư mục
-```
+---
+
+## 🎯 Mục tiêu Kỹ thuật
+
+1. **Zustand Slices Pattern**:
+   - Tách biệt `authSlice.ts` (`token`, `user`, `isAuthenticated`, `login`, `logout`) và `uiSlice.ts` (`theme`, `toasts`, `toggleTheme`, `addToast`, `removeToast`).
+   - Hợp nhất thành một Store duy nhất `useBoundStore` với type-safety 100%.
+
+2. **Truy cập State ngoài React (Vanilla JS)**:
+   - Sử dụng `useBoundStore.getState().token` trong `axiosClient.interceptors.request` để tự động đính kèm `Authorization: Bearer <token>` cho mọi request HTTP.
+   - Bắt lỗi HTTP 401/403 trong `interceptors.response` và gọi `useBoundStore.getState().addToast(...)` để hiển thị cảnh báo trực tiếp lên giao diện.
+
+3. **Bẫy dữ liệu (Data Trap)**:
+   - Khi người dùng đăng xuất (`token = null`), Request Interceptor an toàn loại bỏ header `Authorization`, tuyệt đối không gửi chuỗi rác `Bearer null` hoặc `Bearer undefined` gây lỗi từ chối tại API gateway.
+
+4. **Trực quan hóa Request / Response Inspector**:
+   - Trực tiếp kiểm tra Request Headers gửi đi và Payload nhận về từ các Endpoint bảo mật (`/api/admin/metrics`, `/api/manager/reports`) và công khai (`/api/public/news`).
+
+---
+
+## 🏗️ Cấu trúc Thư mục
+
+```text
 P3.9/
 ├── src/
+│   ├── api/
+│   │   └── axiosClient.ts             # Cấu hình Axios Instance & Interceptors sử dụng Zustand getState()
 │   ├── components/
-│   │   ├── Navbar.tsx                   # Thanh điều hướng, trạng thái login, đổi vai trò
-│   │   ├── ProtectedRoute.tsx           # Wrapper component bảo vệ route
-│   │   ├── ArchitectureTreeModal.tsx    # Sơ đồ bản vẽ cây định tuyến Public vs Protected
-│   │   └── HistoryStackVisualizer.tsx   # Phân tích kỹ thuật giải quyết bẫy Browser History Stack
-│   ├── context/
-│   │   └── AuthContext.tsx              # Quản lý phiên xác thực, vai trò user (student, instructor, admin)
-│   ├── pages/
-│   │   ├── HomePage.tsx                 # Trang chủ công khai
-│   │   ├── LoginPage.tsx                # Trang đăng nhập kèm xử lý { replace: true }
-│   │   ├── VirtualClassroomPage.tsx     # Phòng học ảo độc quyền (Protected)
-│   │   ├── DashboardPage.tsx            # Bảng điều khiển học viên (Protected)
-│   │   ├── AdminPage.tsx                # Quản trị hệ thống (Role-based: admin only)
-│   │   ├── UnauthorizedPage.tsx         # 403 Forbidden
-│   │   └── NotFoundPage.tsx             # 404 Not Found
+│   │   ├── ApiRequesterInspector.tsx  # Bộ gửi Request và phân tích Headers / Payload
+│   │   ├── AuthPanel.tsx              # Quản lý Đăng nhập/Đăng xuất & Trực quan hóa JWT Token
+│   │   ├── Header.tsx                 # Thanh điều hướng, Avatar User & Switcher Theme
+│   │   ├── SlicesDocModal.tsx         # Modal tài liệu phân tích kỹ thuật Slices Pattern
+│   │   └── ToastContainer.tsx         # Hàng đợi thông báo Toasts kích hoạt từ Zustand
+│   ├── store/
+│   │   ├── slices/
+│   │   │   ├── authSlice.ts           # Slice quản lý xác thực người dùng
+│   │   │   └── uiSlice.ts             # Slice quản lý theme và toast notifications
+│   │   └── useBoundStore.ts           # Bound Store kết hợp đa slice
 │   ├── types/
-│   │   └── auth.ts                      # TypeScript types
-│   ├── App.tsx
-│   ├── index.css
-│   └── main.tsx
+│   │   └── store.ts                   # Định nghĩa Interface & Types
+│   ├── App.tsx                        # Layout gốc và điều phối UI
+│   ├── index.css                      # Tailwind CSS styles
+│   └── main.tsx                       # Entry point
 ├── package.json
-├── tsconfig.json
 └── vite.config.ts
 ```
 
-## 3. Cách Cài đặt và Khởi chạy
-```bash
-# 1. Di chuyển vào thư mục dự án
-cd P3.9
+---
 
-# 2. Cài đặt các phụ thuộc
+## 🚀 Hướng dẫn Cài đặt & Chạy ứng dụng
+
+```bash
+# 1. Cài đặt dependencies
 npm install
 
-# 3. Khởi chạy môi trường phát triển
+# 2. Khởi động môi trường phát triển (Vite Dev Server)
 npm run dev
 
-# 4. Build kiểm tra TypeScript
+# 3. Build kiểm tra TypeScript & Bundle production
 npm run build
 ```
