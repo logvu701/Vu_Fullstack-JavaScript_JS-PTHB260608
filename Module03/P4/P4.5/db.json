@@ -1,0 +1,44 @@
+{
+  "contacts": [
+    {
+      "id": "1",
+      "name": "Nguyễn Văn An",
+      "phone": "0912345678",
+      "email": "an.nguyen@example.com",
+      "group": "Đồng nghiệp",
+      "createdAt": "2026-03-01T08:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "name": "Trần Thị Bích",
+      "phone": "0987654321",
+      "email": "bich.tran@company.vn",
+      "group": "Khách hàng",
+      "createdAt": "2026-03-02T09:30:00.000Z"
+    },
+    {
+      "id": "3",
+      "name": "Lê Hoàng Nam",
+      "phone": "0903112233",
+      "email": "nam.le@techcorp.io",
+      "group": "Đối tác",
+      "createdAt": "2026-03-03T14:15:00.000Z"
+    },
+    {
+      "id": "4",
+      "name": "Phạm Quỳnh Như",
+      "phone": "0934567890",
+      "email": "nhu.pham@family.org",
+      "group": "Gia đình",
+      "createdAt": "2026-03-04T16:45:00.000Z"
+    },
+    {
+      "id": "5",
+      "name": "Đặng Quốc Hưng",
+      "phone": "0978990011",
+      "email": "hung.dang@friends.net",
+      "group": "Bạn bè",
+      "createdAt": "2026-03-05T11:20:00.000Z"
+    }
+  ]
+}

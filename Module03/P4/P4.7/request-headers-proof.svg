@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <!-- Chrome DevTools Window Frame -->
+  <rect width="900" height="560" rx="12" fill="#202124" />
+  
+  <!-- Window Header / Title Bar -->
+  <rect width="900" height="40" rx="12" fill="#292a2d" />
+  <circle cx="24" cy="20" r="6" fill="#ff5f56" />
+  <circle cx="44" cy="20" r="6" fill="#ffbd2e" />
+  <circle cx="64" cy="20" r="6" fill="#27c93f" />
+  <text x="100" y="24" fill="#9aa0a6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+    Developer Tools - https://api.crm-enterprise.vn/v1/customers [Network Tab]
+  </text>
+
+  <!-- DevTools Navigation Tabs -->
+  <rect y="40" width="900" height="34" fill="#202124" border-bottom="1px solid #3c4043" />
+  <text x="30" y="62" fill="#9aa0a6" font-family="sans-serif" font-size="12">Elements</text>
+  <text x="105" y="62" fill="#9aa0a6" font-family="sans-serif" font-size="12">Console</text>
+  <text x="175" y="62" fill="#9aa0a6" font-family="sans-serif" font-size="12">Sources</text>
+  <!-- Network tab active -->
+  <rect x="235" y="40" width="75" height="34" fill="#292a2d" />
+  <rect x="235" y="72" width="75" height="2" fill="#8ab4f8" />
+  <text x="247" y="62" fill="#8ab4f8" font-family="sans-serif" font-size="12" font-weight="600">Network</text>
+  <text x="330" y="62" fill="#9aa0a6" font-family="sans-serif" font-size="12">Performance</text>
+  <text x="430" y="62" fill="#9aa0a6" font-family="sans-serif" font-size="12">Application</text>
+
+  <!-- Sub-header (Headers / Payload / Preview / Response) -->
+  <rect y="74" width="900" height="36" fill="#292a2d" />
+  <text x="30" y="97" fill="#8ab4f8" font-family="sans-serif" font-size="12" font-weight="600">Headers</text>
+  <rect x="25" y="108" width="55" height="2" fill="#8ab4f8" />
+  <text x="110" y="97" fill="#9aa0a6" font-family="sans-serif" font-size="12">Payload</text>
+  <text x="185" y="97" fill="#9aa0a6" font-family="sans-serif" font-size="12">Preview</text>
+  <text x="260" y="97" fill="#9aa0a6" font-family="sans-serif" font-size="12">Response</text>
+  <text x="345" y="97" fill="#9aa0a6" font-family="sans-serif" font-size="12">Initiator</text>
+  <text x="420" y="97" fill="#9aa0a6" font-family="sans-serif" font-size="12">Timing</text>
+
+  <!-- Content Background -->
+  <rect y="110" width="900" height="450" fill="#202124" />
+
+  <!-- Section 1: General -->
+  <text x="30" y="140" fill="#e8eaed" font-family="sans-serif" font-size="13" font-weight="700">▼ General</text>
+  <text x="50" y="165" fill="#9aa0a6" font-family="monospace" font-size="12">Request URL:</text>
+  <text x="180" y="165" fill="#e8eaed" font-family="monospace" font-size="12">https://api.crm-enterprise.vn/v1/customers</text>
+  
+  <text x="50" y="188" fill="#9aa0a6" font-family="monospace" font-size="12">Request Method:</text>
+  <text x="180" y="188" fill="#81c995" font-family="monospace" font-size="12" font-weight="bold">GET</text>
+
+  <text x="50" y="211" fill="#9aa0a6" font-family="monospace" font-size="12">Status Code:</text>
+  <circle cx="185" cy="207" r="5" fill="#81c995" />
+  <text x="198" y="211" fill="#81c995" font-family="monospace" font-size="12" font-weight="bold">200 OK</text>
+
+  <text x="50" y="234" fill="#9aa0a6" font-family="monospace" font-size="12">Remote Address:</text>
+  <text x="180" y="234" fill="#e8eaed" font-family="monospace" font-size="12">103.20.144.88:443</text>
+
+  <!-- Section 2: Response Headers -->
+  <line x1="30" y1="250" x2="870" y2="250" stroke="#3c4043" stroke-width="1" />
+  <text x="30" y="275" fill="#e8eaed" font-family="sans-serif" font-size="13" font-weight="700">▶ Response Headers (6)</text>
+
+  <!-- Section 3: Request Headers (PROVE TOKEN INJECTION) -->
+  <line x1="30" y1="295" x2="870" y2="295" stroke="#3c4043" stroke-width="1" />
+  <text x="30" y="320" fill="#e8eaed" font-family="sans-serif" font-size="13" font-weight="700">▼ Request Headers</text>
+
+  <!-- Highlight Box around Authorization Header -->
+  <rect x="40" y="333" width="820" height="42" rx="6" fill="#13342b" stroke="#34a853" stroke-width="1.5" />
+  
+  <text x="50" y="358" fill="#81c995" font-family="monospace" font-size="13" font-weight="bold">Authorization:</text>
+  <text x="180" y="358" fill="#a8dab5" font-family="monospace" font-size="12" font-weight="bold">Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJDUk0tODg5Iiwicm9sZSI6IlNhbGVzRGlyZWN0b3I... [INJECTED VIA INTERCEPTOR]</text>
+
+  <text x="50" y="398" fill="#9aa0a6" font-family="monospace" font-size="12">Accept:</text>
+  <text x="180" y="398" fill="#e8eaed" font-family="monospace" font-size="12">application/json, text/plain, */*</text>
+
+  <text x="50" y="420" fill="#9aa0a6" font-family="monospace" font-size="12">Content-Type:</text>
+  <text x="180" y="420" fill="#e8eaed" font-family="monospace" font-size="12">application/json</text>
+
+  <text x="50" y="442" fill="#9aa0a6" font-family="monospace" font-size="12">User-Agent:</text>
+  <text x="180" y="442" fill="#e8eaed" font-family="monospace" font-size="12">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0.0.0 Safari/537.36</text>
+
+  <text x="50" y="464" fill="#9aa0a6" font-family="monospace" font-size="12">Sec-Fetch-Mode:</text>
+  <text x="180" y="464" fill="#e8eaed" font-family="monospace" font-size="12">cors</text>
+
+  <!-- Badge / Verified Watermark -->
+  <rect x="40" y="490" width="820" height="45" rx="8" fill="#2d3748" stroke="#4a5568" />
+  <text x="60" y="518" fill="#68d391" font-family="sans-serif" font-size="13" font-weight="bold">✓ XÁC THỰC THÀNH CÔNG:</text>
+  <text x="240" y="518" fill="#e2e8f0" font-family="sans-serif" font-size="12">
+    Axios Request Interceptor tự động gán Bearer Token vào Headers trước khi truyền tải qua mạng.
+  </text>
+</svg>
